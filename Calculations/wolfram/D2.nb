@@ -1,0 +1,105 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3001,         97]
+NotebookOptionsPosition[      2575,         81]
+NotebookOutlinePosition[      2921,         96]
+CellTagsIndexPosition[      2878,         93]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{"FullSimplify", "[", 
+   RowBox[{
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{
+       FractionBox["\[Beta]", 
+        RowBox[{"2", "\[Xi]"}]], 
+       RowBox[{"(", 
+        RowBox[{"\[Epsilon]0", "-", "\[Epsilon]1"}], ")"}], "E0", " ", 
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", "\[Beta]"}], 
+         FractionBox[
+          RowBox[{"x", "-", "x1"}], "\[Xi]"]}]]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x1", ",", 
+        RowBox[{"-", "h"}], ",", "x"}], "}"}]}], "]"}], "-", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{
+       FractionBox["\[Beta]", 
+        RowBox[{"2", "\[Xi]"}]], 
+       RowBox[{"(", 
+        RowBox[{"\[Epsilon]0", "-", "\[Epsilon]1"}], ")"}], "E0", " ", 
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{"\[Beta]", 
+         FractionBox[
+          RowBox[{"x", "-", "x1"}], "\[Xi]"]}]]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x1", ",", "x", ",", "h"}], "}"}]}], "]"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7914704352380514`*^9, 3.7914704354411297`*^9}, {
+   3.7914705343061314`*^9, 3.79147053659548*^9}, 3.7914706128399973`*^9, {
+   3.7914713836244993`*^9, 3.791471408785081*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"84deecbe-7b70-4cb6-9051-db1c4924e4b0"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", "2"], " ", 
+  SuperscriptBox["\[ExponentialE]", 
+   RowBox[{"-", 
+    FractionBox[
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"h", "+", "x"}], ")"}], " ", "\[Beta]"}], "\[Xi]"]}]], " ", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"-", "1"}], "+", 
+    SuperscriptBox["\[ExponentialE]", 
+     FractionBox[
+      RowBox[{"2", " ", "x", " ", "\[Beta]"}], "\[Xi]"]]}], ")"}], " ", "E0", 
+  " ", 
+  RowBox[{"(", 
+   RowBox[{"\[Epsilon]0", "-", "\[Epsilon]1"}], ")"}]}]], "Output",
+ CellChangeTimes->{3.7914714106011114`*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"0a2c441e-3dbc-4031-9883-656a2c23c70f"]
+}, Open  ]]
+},
+WindowSize->{759, 677},
+WindowMargins->{{Automatic, -104}, {-150, Automatic}},
+FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 1333, 35, 109, "Input",ExpressionUUID->"84deecbe-7b70-4cb6-9051-db1c4924e4b0"],
+Cell[1916, 59, 643, 19, 84, "Output",ExpressionUUID->"0a2c441e-3dbc-4031-9883-656a2c23c70f"]
+}, Open  ]]
+}
+]
+*)
+

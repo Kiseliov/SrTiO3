@@ -60,7 +60,7 @@
 \leftmargin 1cm
 \topmargin 2cm
 \rightmargin 1cm
-\bottommargin 2cm
+\bottommargin 1cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
@@ -238,8 +238,7 @@ D(x) & =D_{1}(x)+D_{2}(x)+D_{3}(x)=\\
 \begin{align*}
 0 & =\epsilon_{1}E_{1}e^{-\frac{h}{\xi}}\sh(\frac{x}{\xi})-\beta(\epsilon_{0}-\epsilon_{1})E_{0}e^{-\beta\frac{x}{\xi}}\ch\left(\beta\frac{x}{\xi}\right)+(\epsilon_{0}-\epsilon_{1})E_{0}e^{-\beta\frac{x}{\xi}}\sh\left(\beta\frac{x}{\xi}\right)+\\
  & +\frac{\beta}{1-\beta^{2}}(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}\Bigg[\ch(\frac{x}{\xi})-\beta\ch(\beta\frac{x}{\xi})e^{-\beta\frac{h}{\xi}}\left(\ch(\frac{h}{\xi})+\beta\sh(\frac{h}{\xi})\right)\Bigg]\\
-\frac{\beta}{1-\beta^{2}} & =\frac{\sqrt{\frac{\epsilon_{1}}{\epsilon_{0}}}}{1-\frac{\epsilon_{1}}{\epsilon_{0}}}=\frac{\sqrt{\epsilon_{0}\epsilon_{1}}}{\epsilon_{0}-\epsilon_{1}}\\
-0 & =(\epsilon_{0}-\epsilon_{1})E_{0}e^{-\beta\frac{x}{\xi}}\left(-\beta\ \ch\left(\beta\frac{x}{\xi}\right)+\sh\left(\beta\frac{x}{\xi}\right)\right)+E_{1}e^{-\frac{h}{\xi}}\Bigg[\sqrt{\epsilon_{0}\epsilon_{1}}\ch(\frac{x}{\xi})-\epsilon_{1}\ch(\beta\frac{x}{\xi})e^{-\beta\frac{h}{\xi}}\left(\ch(\frac{h}{\xi})+\beta\sh(\frac{h}{\xi})\right)+\epsilon_{1}\sh\left(\frac{x}{\xi}\right)\Bigg]
+\frac{\beta}{1-\beta^{2}} & =\frac{\beta}{1-\frac{\epsilon_{1}}{\epsilon_{0}}}=\frac{\beta\ \epsilon_{0}}{\epsilon_{0}-\epsilon_{1}}
 \end{align*}
 
 \end_inset

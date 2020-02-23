@@ -60,7 +60,7 @@
 \leftmargin 1cm
 \topmargin 2cm
 \rightmargin 1cm
-\bottommargin 2cm
+\bottommargin 1cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
