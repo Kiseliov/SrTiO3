@@ -60,7 +60,7 @@
 \leftmargin 1cm
 \topmargin 2cm
 \rightmargin 1cm
-\bottommargin 1cm
+\bottommargin 2cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
@@ -140,7 +140,7 @@ Let's pretend that
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $D(x)=\int\limits _{-h}^{h}K(x-x')E(x')dx'=\int\limits _{-h}^{h}\left(\epsilon_{1}\delta(x-x')+\frac{\beta}{\xi}\sign(x-x')(\epsilon_{0}-\epsilon_{1})e^{-\beta\frac{|x-x'|}{\epsilon}}\right)\left(E_{0}+2E_{1}e^{-\frac{h}{\xi}}\ch(\frac{x}{\xi})\right)$
+\begin_inset Formula $D(x)=\int\limits _{-h}^{h}K(x-x')E(x')dx'=\int\limits _{-h}^{h}\left(\epsilon_{1}\delta(x-x')+\frac{\beta}{2\xi}\sign(x-x')(\epsilon_{0}-\epsilon_{1})e^{-\beta\frac{|x-x'|}{\epsilon}}\right)\left(E_{0}+2E_{1}e^{-\frac{h}{\xi}}\ch(\frac{x}{\xi})\right)$
 \end_inset
 
 
@@ -170,10 +170,10 @@ Let's pretend that
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
-D_{2}(x) & =\frac{\beta}{\xi}(\epsilon_{0}-\epsilon_{1})E_{0}\int\sign(x-x')e^{-\beta\frac{|x-x'|}{\epsilon}}dx'=\\
- & =\frac{\beta}{\xi}(\epsilon_{0}-\epsilon_{1})E_{0}\left[\int\limits _{-h}^{x}\exp(-\beta\frac{x-x'}{\xi})dx'-\int\limits _{x}^{h}\exp(\beta\frac{x-x'}{\xi})\right]=\\
- & =\frac{\beta}{\xi}(\epsilon_{0}-\epsilon_{1})E_{0}\left[e^{-\beta\frac{x}{\xi}}\frac{\xi}{\beta}\left(e^{\beta\frac{x}{\xi}}-e^{-\beta\frac{h}{\xi}}\right)+e^{\beta\frac{x}{\xi}}\frac{\xi}{\beta}\left(e^{-\beta\frac{h}{\xi}}-e^{-\beta\frac{x}{\xi}}\right)\right]=\\
- & =2(\epsilon_{0}-\epsilon_{1})E_{0}e^{-\beta\frac{x}{\xi}}\ch\left(\beta\frac{x}{\xi}\right)
+D_{2}(x) & =\frac{\beta}{2\xi}(\epsilon_{0}-\epsilon_{1})E_{0}\int\sign(x-x')e^{-\beta\frac{|x-x'|}{\epsilon}}dx'=\\
+ & =\frac{\beta}{2\xi}(\epsilon_{0}-\epsilon_{1})E_{0}\left[\int\limits _{-h}^{x}\exp(-\beta\frac{x-x'}{\xi})dx'-\int\limits _{x}^{h}\exp(\beta\frac{x-x'}{\xi})\right]=\\
+ & =\frac{\beta}{2\xi}(\epsilon_{0}-\epsilon_{1})E_{0}\left[e^{-\beta\frac{x}{\xi}}\frac{\xi}{\beta}\left(e^{\beta\frac{x}{\xi}}-e^{-\beta\frac{h}{\xi}}\right)+e^{\beta\frac{x}{\xi}}\frac{\xi}{\beta}\left(e^{-\beta\frac{h}{\xi}}-e^{-\beta\frac{x}{\xi}}\right)\right]=\\
+ & =(\epsilon_{0}-\epsilon_{1})E_{0}e^{-\beta\frac{x}{\xi}}\ch\left(\beta\frac{x}{\xi}\right)
 \end{align*}
 
 \end_inset
@@ -191,15 +191,55 @@ D_{2}(x) & =\frac{\beta}{\xi}(\epsilon_{0}-\epsilon_{1})E_{0}\int\sign(x-x')e^{-
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
-D_{3}(x) & =\frac{\beta}{\xi}(\epsilon_{0}-\epsilon_{1})2E_{1}e^{-\frac{h}{\xi}}\int\limits _{-h}^{+h}\sign(x-x')e^{-\beta\frac{|x-x'|}{\xi}}\ch\left(\frac{x'}{\xi}\right)dx'=\\
- & =\frac{\beta}{\xi}(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}\left[e^{-\beta\frac{x}{\xi}}\int\limits _{-h}^{x}\left(e^{\frac{x'}{\xi}(1+\beta)}+e^{\frac{x'}{\xi}(\beta-1)}\right)dx'-e^{\beta\frac{x}{\xi}}\int\limits _{x}^{h}\left(e^{\frac{x'}{\xi}(1-\beta)}+e^{-\frac{x'}{\xi}(1+\beta)}\right)dx'\right]=\\
- & =\frac{\beta}{\xi}(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}\text{\Bigg[}e^{-\beta\frac{x}{\xi}}\left(\frac{\xi}{1+\beta}\left\{ e^{\frac{x}{\xi}(1+\beta)}-e^{-\frac{h}{\xi}(1+\beta)}\right\} +\frac{\xi}{\beta-1}\left\{ e^{\frac{x}{\xi}(\beta-1)}-e^{-\frac{h}{\xi}(\beta-1)}\right\} \right)-\\
+D_{3}(x) & =\frac{\beta}{2\xi}(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}\int\limits _{-h}^{+h}\sign(x-x')e^{-\beta\frac{|x-x'|}{\xi}}\ch\left(\frac{x'}{\xi}\right)dx'=\\
+ & =\frac{\beta}{4\xi}(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}\left[e^{-\beta\frac{x}{\xi}}\int\limits _{-h}^{x}\left(e^{\frac{x'}{\xi}(1+\beta)}+e^{\frac{x'}{\xi}(\beta-1)}\right)dx'-e^{\beta\frac{x}{\xi}}\int\limits _{x}^{h}\left(e^{\frac{x'}{\xi}(1-\beta)}+e^{-\frac{x'}{\xi}(1+\beta)}\right)dx'\right]=\\
+ & =\frac{\beta}{4\xi}(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}\text{\Bigg[}e^{-\beta\frac{x}{\xi}}\left(\frac{\xi}{1+\beta}\left\{ e^{\frac{x}{\xi}(1+\beta)}-e^{-\frac{h}{\xi}(1+\beta)}\right\} +\frac{\xi}{\beta-1}\left\{ e^{\frac{x}{\xi}(\beta-1)}-e^{-\frac{h}{\xi}(\beta-1)}\right\} \right)-\\
  & -e^{\beta\frac{x}{\xi}}\left(\frac{\xi}{1-\beta}\left\{ e^{\frac{h}{\xi}(1-\beta)}-e^{\frac{x}{\xi}(1-\beta)}\right\} -\frac{\xi}{\beta+1}\left\{ e^{-\frac{h}{\xi}(1+\beta)}-e^{-\frac{x}{\xi}(\beta+1)}\right\} \right)\Bigg]=\\
- & =\beta(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}\Bigg[\frac{1}{1+\beta}\left(e^{\frac{x}{\xi}}-e^{-\frac{h}{\xi}(1+\beta)-\beta\frac{x}{\xi}}+e^{-\frac{h}{\xi}(1+\beta)+\beta\frac{x}{\xi}}-e^{-\frac{x}{\xi}}\right)+\frac{1}{\beta-1}\left(e^{-\frac{x}{\xi}}-e^{-\frac{h}{\xi}(\beta-1)-\beta\frac{x}{\xi}}+e^{-\frac{h}{\xi}(\beta-1)+\beta\frac{x}{\xi}}-e^{\frac{x}{\xi}}\right)\Bigg]=\\
- & =\beta(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}\Bigg[\frac{2}{1+\beta}\left(\sh(\frac{x}{\xi})-\sh(\beta\frac{x}{\xi})e^{-\frac{h}{\xi}(1+\beta)}\right)+\frac{2}{1-\beta}\left(\sh(\frac{x}{\xi})-\sh(\beta\frac{x}{\xi})e^{-\frac{h}{\xi}(\beta-1)}\right)\Bigg]=\\
- & =2\beta(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}\Bigg[\frac{1}{1-\beta^{2}}\sh(\frac{x}{\xi})-\sh(\beta\frac{x}{\xi})e^{-\beta\frac{h}{\xi}}\left(\frac{e^{-\frac{h}{\xi}}}{1+\beta}+\frac{e^{\frac{h}{\xi}}}{1-\beta}\right)\Bigg]=\\
- & =2\beta(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}\Bigg[\frac{1}{1-\beta^{2}}\sh(\frac{x}{\xi})-2\sh(\beta\frac{x}{\xi})e^{-\beta\frac{h}{\xi}}\left(\frac{2\ch(\frac{h}{\xi})+2\beta\sh(\frac{h}{\xi})}{1-\beta^{2}}\right)\Bigg]=\\
- & =\frac{2\beta}{1-\beta^{2}}(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}\Bigg[\sh(\frac{x}{\xi})-2\sh(\beta\frac{x}{\xi})e^{-\beta\frac{h}{\xi}}\left(\ch(\frac{h}{\xi})+\beta\sh(\frac{h}{\xi})\right)\Bigg]
+ & =\frac{1}{4}\beta(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}\Bigg[\frac{1}{1+\beta}\left(e^{\frac{x}{\xi}}-e^{-\frac{h}{\xi}(1+\beta)-\beta\frac{x}{\xi}}+e^{-\frac{h}{\xi}(1+\beta)+\beta\frac{x}{\xi}}-e^{-\frac{x}{\xi}}\right)+\frac{1}{\beta-1}\left(e^{-\frac{x}{\xi}}-e^{-\frac{h}{\xi}(\beta-1)-\beta\frac{x}{\xi}}+e^{-\frac{h}{\xi}(\beta-1)+\beta\frac{x}{\xi}}-e^{\frac{x}{\xi}}\right)\Bigg]=\\
+ & =\frac{1}{4}\beta(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}\Bigg[\frac{2}{1+\beta}\left(\sh(\frac{x}{\xi})-\sh(\beta\frac{x}{\xi})e^{-\frac{h}{\xi}(1+\beta)}\right)+\frac{2}{1-\beta}\left(\sh(\frac{x}{\xi})-\sh(\beta\frac{x}{\xi})e^{-\frac{h}{\xi}(\beta-1)}\right)\Bigg]=\\
+ & =\frac{1}{4}\beta(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}\Bigg[\frac{4}{1-\beta^{2}}\sh(\frac{x}{\xi})-2\sh(\beta\frac{x}{\xi})e^{-\beta\frac{h}{\xi}}\left(\frac{e^{-\frac{h}{\xi}}}{1+\beta}+\frac{e^{\frac{h}{\xi}}}{1-\beta}\right)\Bigg]=\\
+ & =\frac{1}{4}\beta(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}\Bigg[\frac{4}{1-\beta^{2}}\sh(\frac{x}{\xi})-2\sh(\beta\frac{x}{\xi})e^{-\beta\frac{h}{\xi}}\left(\frac{2\ch(\frac{h}{\xi})+2\beta\sh(\frac{h}{\xi})}{1-\beta^{2}}\right)\Bigg]=\\
+ & =\frac{\beta}{1-\beta^{2}}(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}\Bigg[\sh(\frac{x}{\xi})-\sh(\beta\frac{x}{\xi})e^{-\beta\frac{h}{\xi}}\left(\ch(\frac{h}{\xi})+\beta\sh(\frac{h}{\xi})\right)\Bigg]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $D(x)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+D(x) & =D_{1}(x)+D_{2}(x)+D_{3}(x)=\\
+ & =\epsilon_{1}E_{0}+\epsilon_{1}E_{1}e^{-\frac{h}{\xi}}\ch(\frac{x}{\xi})+(\epsilon_{0}-\epsilon_{1})E_{0}e^{-\beta\frac{x}{\xi}}\ch\left(\beta\frac{x}{\xi}\right)+\frac{\beta}{1-\beta^{2}}(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}\Bigg[\sh(\frac{x}{\xi})-\sh(\beta\frac{x}{\xi})e^{-\beta\frac{h}{\xi}}\left(\ch(\frac{h}{\xi})+\beta\sh(\frac{h}{\xi})\right)\Bigg]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset Formula $\frac{d}{dx}D(x)=0$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+0 & =\epsilon_{1}E_{1}e^{-\frac{h}{\xi}}\sh(\frac{x}{\xi})-\beta(\epsilon_{0}-\epsilon_{1})E_{0}e^{-\beta\frac{x}{\xi}}\ch\left(\beta\frac{x}{\xi}\right)+(\epsilon_{0}-\epsilon_{1})E_{0}e^{-\beta\frac{x}{\xi}}\sh\left(\beta\frac{x}{\xi}\right)+\\
+ & +\frac{\beta}{1-\beta^{2}}(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}\Bigg[\ch(\frac{x}{\xi})-\beta\ch(\beta\frac{x}{\xi})e^{-\beta\frac{h}{\xi}}\left(\ch(\frac{h}{\xi})+\beta\sh(\frac{h}{\xi})\right)\Bigg]\\
+\frac{\beta}{1-\beta^{2}} & =\frac{\sqrt{\frac{\epsilon_{1}}{\epsilon_{0}}}}{1-\frac{\epsilon_{1}}{\epsilon_{0}}}=\frac{\sqrt{\epsilon_{0}\epsilon_{1}}}{\epsilon_{0}-\epsilon_{1}}\\
+0 & =(\epsilon_{0}-\epsilon_{1})E_{0}e^{-\beta\frac{x}{\xi}}\left(-\beta\ \ch\left(\beta\frac{x}{\xi}\right)+\sh\left(\beta\frac{x}{\xi}\right)\right)+E_{1}e^{-\frac{h}{\xi}}\Bigg[\sqrt{\epsilon_{0}\epsilon_{1}}\ch(\frac{x}{\xi})-\epsilon_{1}\ch(\beta\frac{x}{\xi})e^{-\beta\frac{h}{\xi}}\left(\ch(\frac{h}{\xi})+\beta\sh(\frac{h}{\xi})\right)+\epsilon_{1}\sh\left(\frac{x}{\xi}\right)\Bigg]
 \end{align*}
 
 \end_inset
