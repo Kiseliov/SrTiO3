@@ -170,7 +170,7 @@ Let's pretend that
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
-D_{2}(x) & =\frac{\beta}{2\xi}(\epsilon_{0}-\epsilon_{1})E_{0}\int\sign(x-x')e^{-\beta\frac{|x-x'|}{\epsilon}}dx'=\\
+D_{2}(x) & =\frac{\beta}{2\xi}(\epsilon_{0}-\epsilon_{1})E_{0}\int e^{-\beta\frac{|x-x'|}{\epsilon}}dx'=\\
  & =\frac{\beta}{2\xi}(\epsilon_{0}-\epsilon_{1})E_{0}\left[\int\limits _{-h}^{x}\exp(-\beta\frac{x-x'}{\xi})dx'+\int\limits _{x}^{h}\exp(\beta\frac{x-x'}{\xi})\right]=\\
  & =\frac{\beta}{2\xi}(\epsilon_{0}-\epsilon_{1})E_{0}\left[e^{-\beta\frac{x}{\xi}}\frac{\xi}{\beta}\left(e^{\beta\frac{x}{\xi}}-e^{-\beta\frac{h}{\xi}}\right)-e^{\beta\frac{x}{\xi}}\frac{\xi}{\beta}\left(e^{-\beta\frac{h}{\xi}}-e^{-\beta\frac{x}{\xi}}\right)\right]=\\
  & =(\epsilon_{0}-\epsilon_{1})E_{0}\left(1-e^{-\beta\frac{h}{\xi}}\ch\left(\beta\frac{x}{\xi}\right)\right)
@@ -243,7 +243,7 @@ D(x) & =D_{1}(x)+D_{2}(x)+D_{3}(x)=\\
 E_{1} & =-\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\epsilon_{1}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}E_{0}\\
 D(x) & =E_{0}\Bigg\{\epsilon_{1}-\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\ch\left(\frac{x}{\xi}\right)+(\epsilon_{0}-\epsilon_{1})\left(1-e^{-\beta\frac{h}{\xi}}\ch\left(\beta\frac{x}{\xi}\right)\right)-\\
  & -\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\Bigg[-\beta\ch\left(\frac{x}{\xi}\right)+\ch(\beta\frac{x}{\xi})e^{-\beta\frac{h}{\xi}}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)\Bigg]\Bigg\}=\\
- & =E_{0}\text{\left\{ \epsilon_{1}-\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\ch\left(\frac{x}{\xi}\right)\left[1-\beta\right]+(\epsilon_{0}-\epsilon_{1})\left\{ 1-\left[1+\beta e^{-\frac{h}{\xi}}\right]e^{-\beta\frac{h}{\xi}}\ch\left(\beta\frac{x}{\xi}\right)\right\} \right\} }
+ & =E_{0}\text{\left\{  \epsilon_{1}-\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\ch\left(\frac{x}{\xi}\right)\left[1-\beta\right]+(\epsilon_{0}-\epsilon_{1})\left\{  1-\left[1+\beta e^{-\frac{h}{\xi}}\right]e^{-\beta\frac{h}{\xi}}\ch\left(\beta\frac{x}{\xi}\right)\right\}  \right\}  }
 \end{align*}
 
 \end_inset
@@ -270,7 +270,7 @@ D(x) & =E_{0}\Bigg\{\epsilon_{1}-\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\left(\
 \end_layout
 
 \begin_layout Standard
-Которые все равно различаются как минимум по порядку 
+Которые все равно различаются как минимум по порядку вхождения 
 \begin_inset Formula $\epsilon.$
 \end_inset
 
@@ -280,6 +280,36 @@ D(x) & =E_{0}\Bigg\{\epsilon_{1}-\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\left(\
 \begin_layout Standard
 А значит 
 \begin_inset Formula $D(h)\neq E(\text{h})\Rightarrow P(h)=\frac{1}{4\pi}\left(D(h)-E(h)\right)\neq0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Рассмотрим предел при 
+\begin_inset Formula $\beta\ll1,\frac{h}{\xi}\gg1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\ch\left(\frac{h}{\xi}\right)\left[1-\beta\right] & \ltimes\ \#e^{-\frac{h}{\xi}}\rightarrow0\\
+\left[1+\beta e^{-\frac{h}{\xi}}\right]e^{-\beta\frac{h}{\xi}}\ch\left(\beta\frac{x}{\xi}\right) & \approx\left[1+\beta e^{-\frac{h}{\xi}}\right]\frac{1}{2}\approx\frac{1}{2}\\
+(\epsilon_{0}-\epsilon_{1})\left\{ 1-\left[1+\beta e^{-\frac{h}{\xi}}\right]e^{-\beta\frac{h}{\xi}}\ch\left(\beta\frac{x}{\xi}\right)\right\}  & \approx(\epsilon_{0}-\epsilon_{1})\frac{1}{2}\\
+D(h) & =E_{0}\left(\epsilon_{1}+\frac{\epsilon_{0}-\epsilon_{1}}{2}\right)=E_{0}\frac{\epsilon_{0}}{2}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Скорее всего мы потеряли 2 где-то перед 
+\begin_inset Formula $(\epsilon_{0}-\epsilon_{1})\left\{ 1-\left[1+\beta e^{-\frac{h}{\xi}}\right]e^{-\beta\frac{h}{\xi}}\ch\left(\beta\frac{x}{\xi}\right)\right\} $
 \end_inset
 
 
