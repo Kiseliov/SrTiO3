@@ -1,0 +1,109 @@
+%% LyX 2.3.3 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english]{article}
+\usepackage[T2A,T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=1cm,rmargin=1cm}
+\usepackage{amsmath}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\DeclareRobustCommand{\cyrtext}{%
+  \fontencoding{T2A}\selectfont\def\encodingdefault{T2A}}
+\DeclareRobustCommand{\textcyr}[1]{\leavevmode{\cyrtext #1}}
+
+
+\makeatother
+
+\usepackage{babel}
+\begin{document}
+\global\long\def\sign{\operatorname{sgn}}%
+
+\global\long\def\ch{\operatorname{ch}}%
+
+\global\long\def\sh{\operatorname{sh}}%
+
+
+\section{K(x)}
+
+\begin{align*}
+\beta & =\sqrt{\frac{\epsilon_{1}}{\epsilon_{0}}}\\
+\epsilon(q) & =\epsilon_{1}\epsilon_{0}\frac{1+(q\xi)^{2}}{\epsilon_{1}+\epsilon_{0}(q\xi)^{2}}\\
+K(x) & =\frac{1}{2\pi}\epsilon_{0}\epsilon_{1}\int\limits _{-\infty}^{+\infty}\frac{1+(q\xi)^{2}}{\epsilon_{1}+\epsilon_{0}(q\xi)}e^{iqx}dq=\\
+ & =\frac{\epsilon_{1}}{2\pi}\int e^{iqx}(1+\frac{\epsilon_{0}-\epsilon_{1}}{\epsilon_{1}+\epsilon_{0}(q\xi)^{2}})dq=\\
+ & =\epsilon_{1}\delta(x)+(\epsilon_{0}-\epsilon_{1})\frac{\beta}{2\xi}e^{-\beta\frac{|x|}{\epsilon}}
+\end{align*}
+
+
+\section{D(x)}
+
+Let's pretend that $E(x)=E_{0}+E_{1}e^{\frac{x-h}{\xi}}+E_{1}e^{\frac{-x-h}{\xi}}=E_{0}+2E_{1}e^{-\frac{h}{\xi}}\ch(\frac{x}{\xi})$
+
+$D(x)=\int\limits _{-h}^{h}K(x-x')E(x')dx'=\int\limits _{-h}^{h}\left(\epsilon_{1}\delta(x-x')+\frac{\beta}{2\xi}(\epsilon_{0}-\epsilon_{1})e^{-\beta\frac{|x-x'|}{\epsilon}}\right)\left(E_{0}+2E_{1}e^{-\frac{h}{\xi}}\ch(\frac{x}{\xi})\right)$
+
+\subsection{$D_{1}$}
+
+$D_{1}(x)=\int\epsilon_{1}\delta(x-x')\left(E_{0}+E_{1}e^{-\frac{h}{\xi}}\ch(\frac{x}{\xi})\right)=\epsilon_{1}E_{0}+\epsilon_{1}E_{1}e^{-\frac{h}{\xi}}\ch(\frac{x}{\xi})$
+
+\subsection{$D_{2}$}
+
+\begin{align*}
+D_{2}(x) & =\frac{\beta}{2\xi}(\epsilon_{0}-\epsilon_{1})E_{0}\int\sign(x-x')e^{-\beta\frac{|x-x'|}{\epsilon}}dx'=\\
+ & =\frac{\beta}{2\xi}(\epsilon_{0}-\epsilon_{1})E_{0}\left[\int\limits _{-h}^{x}\exp(-\beta\frac{x-x'}{\xi})dx'+\int\limits _{x}^{h}\exp(\beta\frac{x-x'}{\xi})\right]=\\
+ & =\frac{\beta}{2\xi}(\epsilon_{0}-\epsilon_{1})E_{0}\left[e^{-\beta\frac{x}{\xi}}\frac{\xi}{\beta}\left(e^{\beta\frac{x}{\xi}}-e^{-\beta\frac{h}{\xi}}\right)-e^{\beta\frac{x}{\xi}}\frac{\xi}{\beta}\left(e^{-\beta\frac{h}{\xi}}-e^{-\beta\frac{x}{\xi}}\right)\right]=\\
+ & =(\epsilon_{0}-\epsilon_{1})E_{0}\left(1-e^{-\beta\frac{h}{\xi}}\ch\left(\beta\frac{x}{\xi}\right)\right)
+\end{align*}
+
+
+\subsection{$D_{3}$}
+
+\begin{align*}
+D_{3}(x) & =\frac{\beta}{2\xi}(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}\int\limits _{-h}^{+h}e^{-\beta\frac{|x-x'|}{\xi}}\ch\left(\frac{x'}{\xi}\right)dx'=\\
+ & =\frac{\beta}{4\xi}(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}\left[e^{-\beta\frac{x}{\xi}}\int\limits _{-h}^{x}\left(e^{\frac{x'}{\xi}(1+\beta)}+e^{\frac{x'}{\xi}(\beta-1)}\right)dx'+e^{\beta\frac{x}{\xi}}\int\limits _{x}^{h}\left(e^{\frac{x'}{\xi}(1-\beta)}+e^{-\frac{x'}{\xi}(1+\beta)}\right)dx'\right]=\\
+ & =\frac{\beta}{4\xi}(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}\text{\ensuremath{\Bigg[}}e^{-\beta\frac{x}{\xi}}\left(\frac{\xi}{1+\beta}\left\{ e^{\frac{x}{\xi}(1+\beta)}-e^{-\frac{h}{\xi}(1+\beta)}\right\} +\frac{\xi}{\beta-1}\left\{ e^{\frac{x}{\xi}(\beta-1)}-e^{-\frac{h}{\xi}(\beta-1)}\right\} \right)+\\
+ & +e^{\beta\frac{x}{\xi}}\left(\frac{\xi}{1-\beta}\left\{ e^{\frac{h}{\xi}(1-\beta)}-e^{\frac{x}{\xi}(1-\beta)}\right\} -\frac{\xi}{\beta+1}\left\{ e^{-\frac{h}{\xi}(1+\beta)}-e^{-\frac{x}{\xi}(1+\beta)}\right\} \right)\Bigg]=\\
+ & =\frac{1}{4}\beta(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}\Bigg[\frac{1}{1+\beta}\left(e^{\frac{x}{\xi}}-e^{-\frac{h}{\xi}(1+\beta)-\beta\frac{x}{\xi}}-e^{-\frac{h}{\xi}(1+\beta)+\beta\frac{x}{\xi}}+e^{-\frac{x}{\xi}}\right)+\frac{1}{\beta-1}\left(e^{-\frac{x}{\xi}}-e^{-\frac{h}{\xi}(\beta-1)-\beta\frac{x}{\xi}}-e^{-\frac{h}{\xi}(\beta-1)+\beta\frac{x}{\xi}}+e^{\frac{x}{\xi}}\right)\Bigg]=\\
+ & =\frac{1}{4}\beta(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}\Bigg[\frac{2}{1+\beta}\left(\ch(\frac{x}{\xi})-\ch(\beta\frac{x}{\xi})e^{-\frac{h}{\xi}(1+\beta)}\right)-\frac{2}{1-\beta}\left(\ch(\frac{x}{\xi})-\ch(\beta\frac{x}{\xi})e^{-\frac{h}{\xi}(\beta-1)}\right)\Bigg]=\\
+ & =\frac{1}{4}\beta(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}\Bigg[-\frac{4\beta}{1-\beta^{2}}\ch(\frac{x}{\xi})-2\ch(\beta\frac{x}{\xi})e^{-\beta\frac{h}{\xi}}\left(\frac{e^{-\frac{h}{\xi}}}{1+\beta}-\frac{e^{\frac{h}{\xi}}}{1-\beta}\right)\Bigg]=\\
+ & =\frac{1}{4}\beta(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}\Bigg[-\frac{4\beta}{1-\beta^{2}}\ch(\frac{x}{\xi})-2\ch(\beta\frac{x}{\xi})e^{-\beta\frac{h}{\xi}}\left(\frac{-2\sh(\frac{h}{\xi})-2\beta\ch(\frac{h}{\xi})}{1-\beta^{2}}\right)\Bigg]=\\
+ & =\frac{\beta}{1-\beta^{2}}(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}\Bigg[-\beta\ch(\frac{x}{\xi})+\ch(\beta\frac{x}{\xi})e^{-\beta\frac{h}{\xi}}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)\Bigg]
+\end{align*}
+
+
+\subsection{$D(x)$}
+
+\begin{align*}
+D(x) & =D_{1}(x)+D_{2}(x)+D_{3}(x)=\\
+ & =\epsilon_{1}E_{0}+\epsilon_{1}E_{1}e^{-\frac{h}{\xi}}\ch(\frac{x}{\xi})+(\epsilon_{0}-\epsilon_{1})E_{0}\left(1-e^{-\beta\frac{h}{\xi}}\ch\left(\beta\frac{x}{\xi}\right)\right)+\\
+ & +\frac{\beta}{1-\beta^{2}}(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}\Bigg[-\beta\ch(\frac{x}{\xi})+\ch(\beta\frac{x}{\xi})e^{-\beta\frac{h}{\xi}}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)\Bigg]
+\end{align*}
+
+
+\section{$\frac{d}{dx}D(x)=0$ }
+
+\begin{align*}
+0 & =\epsilon_{1}E_{1}e^{-\frac{h}{\xi}}\sh(\frac{x}{\xi})+(\epsilon_{0}-\epsilon_{1})E_{0}\beta e^{-\beta\frac{h}{\xi}}\sh\left(\beta\frac{x}{\xi}\right)+\frac{\beta}{1-\beta^{2}}(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}\Bigg[-\beta\sh(\frac{x}{\xi})+\beta\sh(\beta\frac{x}{\xi})e^{-\beta\frac{h}{\xi}}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)\Bigg]\\
+\frac{\beta^{2}}{1-\beta^{2}} & (\epsilon_{0}-\epsilon_{1})=\frac{\frac{\epsilon_{1}}{\epsilon_{0}}}{1-\frac{\epsilon_{1}}{\epsilon_{0}}}(\epsilon_{0}-\epsilon_{1})=\epsilon_{1}\\
+0 & =\left[(\epsilon_{0}-\epsilon_{1})E_{0}\beta+\epsilon_{1}E_{1}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)\right]\sh(\beta\frac{x}{\xi})e^{-\beta\frac{h}{\xi}}\\
+E_{1} & =-\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\epsilon_{1}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}E_{0}\\
+D(x) & =E_{0}\Bigg\{\epsilon_{1}-\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\ch\left(\frac{x}{\xi}\right)+(\epsilon_{0}-\epsilon_{1})\left(1-e^{-\beta\frac{h}{\xi}}\ch\left(\beta\frac{x}{\xi}\right)\right)-\\
+ & -\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\Bigg[-\beta\ch\left(\frac{x}{\xi}\right)+\ch(\beta\frac{x}{\xi})e^{-\beta\frac{h}{\xi}}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)\Bigg]\Bigg\}=\\
+ & =E_{0}\text{\ensuremath{\left\{ \epsilon_{1}-\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\ch\left(\frac{x}{\xi}\right)\left[1-\beta\right]+(\epsilon_{0}-\epsilon_{1})\left\{ 1-\left[1+\beta e^{-\frac{h}{\xi}}\right]e^{-\beta\frac{h}{\xi}}\ch\left(\beta\frac{x}{\xi}\right)\right\} \right\} }}
+\end{align*}
+
+\textcyr{\CYRI\cyrt\cyro\cyrg\cyro} \textcyr{\cyrm\cyrery} \textcyr{\cyri\cyrm\cyre\cyre\cyrm} 
+
+$D(x)=E_{0}\text{\ensuremath{\left\{  \epsilon_{1}-\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\ch\left(\frac{x}{\xi}\right)\left[1-\beta\right]+(\epsilon_{0}-\epsilon_{1})\left\{  1-\left[1+\beta e^{-\frac{h}{\xi}}\right]e^{-\beta\frac{h}{\xi}}\ch\left(\beta\frac{x}{\xi}\right)\right\}  \right\} } }$
+
+$E(x)=E_{0}\left(1-\frac{2(\epsilon_{0}-\epsilon_{1})\beta}{\epsilon_{1}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\ch(\frac{x}{\xi})\right)$
+
+\textcyr{\CYRK\cyro\cyrt\cyro\cyrr\cyrery\cyre} \textcyr{\cyrv\cyrs\cyre}
+\textcyr{\cyrr\cyra\cyrv\cyrn\cyro} \textcyr{\cyrr\cyra\cyrz\cyrl\cyri\cyrch\cyra\cyryu\cyrt\cyrs\cyrya}
+\textcyr{\cyrk\cyra\cyrk} \textcyr{\cyrm\cyri\cyrn\cyri\cyrm\cyru\cyrm}
+``\textcyr{\cyrp\cyro} \textcyr{\cyrr\cyra\cyrz\cyrm\cyre\cyrr\cyrn\cyro\cyrs\cyrt\cyri}''
+$\epsilon$ \textcyr{\cyrp\cyrr\cyri} x = h. 
+
+\textcyr{\CYRA} \textcyr{\cyrz\cyrn\cyra\cyrch\cyri\cyrt} $D(x)\neq E(x)\Rightarrow P(h)=\frac{1}{4\pi}\left(D(h)-E(h)\right)\neq0$
+\end{document}

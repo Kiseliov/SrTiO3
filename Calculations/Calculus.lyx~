@@ -241,11 +241,54 @@ D(x) & =D_{1}(x)+D_{2}(x)+D_{3}(x)=\\
 \frac{\beta^{2}}{1-\beta^{2}} & (\epsilon_{0}-\epsilon_{1})=\frac{\frac{\epsilon_{1}}{\epsilon_{0}}}{1-\frac{\epsilon_{1}}{\epsilon_{0}}}(\epsilon_{0}-\epsilon_{1})=\epsilon_{1}\\
 0 & =\left[(\epsilon_{0}-\epsilon_{1})E_{0}\beta+\epsilon_{1}E_{1}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)\right]\sh(\beta\frac{x}{\xi})e^{-\beta\frac{h}{\xi}}\\
 E_{1} & =-\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\epsilon_{1}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}E_{0}\\
-D(x) & =E_{0}\Biggg\{\epsilon_{1}-\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\ch\left(\frac{x}{\xi}\right)+(\epsilon_{0}-\epsilon_{1})\left(1-e^{-\beta\frac{h}{\xi}}\ch\left(\beta\frac{x}{\xi}\right)\right)-\\
- & -\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\Bigg[-\beta\ch\left(\frac{x}{\xi}\right)+\ch(\beta\frac{x}{\xi})e^{-\beta\frac{h}{\xi}}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)\Bigg]\Biggg\}=\\
- & =E_{0}\Biggg\{\epsilon_{1}-\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\ch\left(\frac{x}{\xi}\right)\left[1-\beta\right]+(\epsilon_{0}-\epsilon_{1})\left\{ 1-\left[1+\beta e^{-\frac{h}{\xi}}\right]e^{-\beta\frac{h}{\xi}}\ch\left(\beta\frac{x}{\xi}\right)\right\} 
+D(x) & =E_{0}\Bigg\{\epsilon_{1}-\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\ch\left(\frac{x}{\xi}\right)+(\epsilon_{0}-\epsilon_{1})\left(1-e^{-\beta\frac{h}{\xi}}\ch\left(\beta\frac{x}{\xi}\right)\right)-\\
+ & -\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\Bigg[-\beta\ch\left(\frac{x}{\xi}\right)+\ch(\beta\frac{x}{\xi})e^{-\beta\frac{h}{\xi}}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)\Bigg]\Bigg\}=\\
+ & =E_{0}\text{\left\{ \epsilon_{1}-\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\ch\left(\frac{x}{\xi}\right)\left[1-\beta\right]+(\epsilon_{0}-\epsilon_{1})\left\{ 1-\left[1+\beta e^{-\frac{h}{\xi}}\right]e^{-\beta\frac{h}{\xi}}\ch\left(\beta\frac{x}{\xi}\right)\right\} \right\} }
 \end{align*}
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Итого мы имеем 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $D(x)=E_{0}\text{\left\{  \epsilon_{1}-\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\ch\left(\frac{x}{\xi}\right)\left[1-\beta\right]+(\epsilon_{0}-\epsilon_{1})\left\{  1-\left[1+\beta e^{-\frac{h}{\xi}}\right]e^{-\beta\frac{h}{\xi}}\ch\left(\beta\frac{x}{\xi}\right)\right\}  \right\}  }$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $E(x)=E_{0}\left(1-\frac{2(\epsilon_{0}-\epsilon_{1})\beta}{\epsilon_{1}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\ch(\frac{x}{\xi})\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Которые все равно различаются как минимум 
+\begin_inset Quotes eld
+\end_inset
+
+по размерности
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $\epsilon$
+\end_inset
+
+ при x = h.
+ 
+\end_layout
+
+\begin_layout Standard
+А значит 
+\begin_inset Formula $D(x)\neq E(x)\Rightarrow P(h)=\frac{1}{4\pi}\left(D(h)-E(h)\right)\neq0$
 \end_inset
 
 
