@@ -119,7 +119,7 @@ K(x)
 \epsilon(q) & =\epsilon_{1}\epsilon_{0}\frac{1+(q\xi)^{2}}{\epsilon_{1}+\epsilon_{0}(q\xi)^{2}}\\
 K(x) & =\frac{1}{2\pi}\epsilon_{0}\epsilon_{1}\int\limits _{-\infty}^{+\infty}\frac{1+(q\xi)^{2}}{\epsilon_{1}+\epsilon_{0}(q\xi)}e^{iqx}dq=\\
  & =\frac{\epsilon_{1}}{2\pi}\int e^{iqx}(1+\frac{\epsilon_{0}-\epsilon_{1}}{\epsilon_{1}+\epsilon_{0}(q\xi)^{2}})dq=\\
- & =\epsilon_{1}\delta(x)+(\epsilon_{0}-\epsilon_{1})\frac{\beta}{2\xi}e^{-\beta\frac{|x|}{\epsilon}}
+ & =\epsilon_{1}\delta(x)+(\epsilon_{0}-\epsilon_{1})\frac{\beta}{2\xi}e^{-\beta\frac{|x|}{\xi}}
 \end{align*}
 
 \end_inset
@@ -219,7 +219,8 @@ D_{3}(x) & =\frac{\beta}{2\xi}(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}
 \begin{align*}
 D(x) & =D_{1}(x)+D_{2}(x)+D_{3}(x)=\\
  & =\epsilon_{1}E_{0}+\epsilon_{1}E_{1}e^{-\frac{h}{\xi}}\ch(\frac{x}{\xi})+(\epsilon_{0}-\epsilon_{1})E_{0}\left(1-e^{-\beta\frac{h}{\xi}}\ch\left(\beta\frac{x}{\xi}\right)\right)+\\
- & +\frac{\beta}{1-\beta^{2}}(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}\Bigg[-\beta\ch(\frac{x}{\xi})+\ch(\beta\frac{x}{\xi})e^{-\beta\frac{h}{\xi}}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)\Bigg]
+ & +\frac{\beta}{1-\beta^{2}}(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}\Bigg[-\beta\ch(\frac{x}{\xi})+\ch(\beta\frac{x}{\xi})e^{-\beta\frac{h}{\xi}}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)\Bigg]\\
+ & =\epsilon_{0}E_{0}+\ch\left(\beta\frac{x}{\xi}\right)e^{-\beta\frac{h}{\xi}}\left[-(\epsilon_{0}-\epsilon_{1})E_{0}+\frac{E_{1}\epsilon_{1}}{\beta}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)\right]
 \end{align*}
 
 \end_inset
@@ -235,17 +236,7 @@ D(x) & =D_{1}(x)+D_{2}(x)+D_{3}(x)=\\
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\begin{align*}
-0 & =\epsilon_{1}E_{1}e^{-\frac{h}{\xi}}\sh(\frac{x}{\xi})+(\epsilon_{0}-\epsilon_{1})E_{0}\beta e^{-\beta\frac{h}{\xi}}\sh\left(\beta\frac{x}{\xi}\right)+\frac{\beta}{1-\beta^{2}}(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}\Bigg[-\beta\sh(\frac{x}{\xi})+\beta\sh(\beta\frac{x}{\xi})e^{-\beta\frac{h}{\xi}}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)\Bigg]\\
-\frac{\beta^{2}}{1-\beta^{2}} & (\epsilon_{0}-\epsilon_{1})=\frac{\frac{\epsilon_{1}}{\epsilon_{0}}}{1-\frac{\epsilon_{1}}{\epsilon_{0}}}(\epsilon_{0}-\epsilon_{1})=\epsilon_{1}\\
-0 & =\left[(\epsilon_{0}-\epsilon_{1})E_{0}\beta+\epsilon_{1}E_{1}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)\right]\sh(\beta\frac{x}{\xi})e^{-\beta\frac{h}{\xi}}\\
-E_{1} & =-\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\epsilon_{1}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}E_{0}\\
-D(x) & =E_{0}\Bigg\{\epsilon_{1}-\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\ch\left(\frac{x}{\xi}\right)+(\epsilon_{0}-\epsilon_{1})\left(1-e^{-\beta\frac{h}{\xi}}\ch\left(\beta\frac{x}{\xi}\right)\right)-\\
- & -\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\Bigg[-\beta\ch\left(\frac{x}{\xi}\right)+\ch(\beta\frac{x}{\xi})e^{-\beta\frac{h}{\xi}}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)\Bigg]\Bigg\}=\\
- & =E_{0}\text{\left\{  \epsilon_{1}-\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\ch\left(\frac{x}{\xi}\right)\left[1-\beta\right]+(\epsilon_{0}-\epsilon_{1})\left\{  1-\left[1+\beta e^{-\frac{h}{\xi}}\right]e^{-\beta\frac{h}{\xi}}\ch\left(\beta\frac{x}{\xi}\right)\right\}  \right\}  }
-\end{align*}
-
+\begin_inset Formula $E_{1}=E_{0}\beta\frac{\epsilon_{0}-\epsilon_{1}}{\epsilon_{1}\left[\sh\left(\frac{h}{\xi}\right)+\beta\ \ch\left(\frac{h}{\xi}\right)\right]}$
 \end_inset
 
 
@@ -256,50 +247,73 @@ D(x) & =E_{0}\Bigg\{\epsilon_{1}-\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\left(\
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $D(x)=E_{0}\text{\left\{  \epsilon_{1}-\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\ch\left(\frac{x}{\xi}\right)\left[1-\beta\right]+(\epsilon_{0}-\epsilon_{1})\left\{  1-\left[1+\beta e^{-\frac{h}{\xi}}\right]e^{-\beta\frac{h}{\xi}}\ch\left(\beta\frac{x}{\xi}\right)\right\}  \right\}  }$
+\begin_inset Formula $D=E_{0}\epsilon_{0}$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $E(x)=E_{0}\left(1-\frac{2(\epsilon_{0}-\epsilon_{1})\beta}{\epsilon_{1}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\ch(\frac{x}{\xi})\right)$
+\begin_inset Formula $E(x)=E_{0}\left(1+\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\epsilon_{1}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\ch(\frac{x}{\xi})\right)$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-Которые все равно различаются как минимум по порядку вхождения 
-\begin_inset Formula $\epsilon.$
+Что полностью соответствует написанному в заметке.
+ Видимо, отсутствие 
+\begin_inset Formula $(\epsilon_{0}-\epsilon_{1})$
 \end_inset
 
+ перед вторым слагаемым в формуле (6) в заметке - это просто опечатка, а
+ не неправильное решение.
+\end_layout
+
+\begin_layout Standard
+По поводу Таганцева все ещё непонятно по все тем же причинам - степень вхождения
  
-\end_layout
-
-\begin_layout Standard
-А значит 
-\begin_inset Formula $D(h)\neq E(\text{h})\Rightarrow P(h)=\frac{1}{4\pi}\left(D(h)-E(h)\right)\neq0$
+\begin_inset Formula $\epsilon$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-Рассмотрим предел при 
-\begin_inset Formula $\beta\ll1,\frac{h}{\xi}\gg1$
+ в D - первая, а в E(h) - нулевая и как бы мы не разлагались 
+\begin_inset Formula $D-E(h)\neq0\Rightarrow P(h)=\frac{D-E(h)}{4\pi}\neq0$
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Standard
+Была идея посмотреть на вид функции E(x) из статьи Таганцева и сравнить
+ с нашей, но она действительно просто константа.
+ Согласно (2.19), (2.21) и (2.22)
 \begin_inset Formula 
 \begin{align*}
-\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\ch\left(\frac{h}{\xi}\right)\left[1-\beta\right] & \ltimes\ \#e^{-\frac{h}{\xi}}\rightarrow0\\
-\left[1+\beta e^{-\frac{h}{\xi}}\right]e^{-\beta\frac{h}{\xi}}\ch\left(\beta\frac{x}{\xi}\right) & \approx\left[1+\beta e^{-\frac{h}{\xi}}\right]\frac{1}{2}\approx\frac{1}{2}\\
-(\epsilon_{0}-\epsilon_{1})\left\{ 1-\left[1+\beta e^{-\frac{h}{\xi}}\right]e^{-\beta\frac{h}{\xi}}\ch\left(\beta\frac{x}{\xi}\right)\right\}  & \approx(\epsilon_{0}-\epsilon_{1})\frac{1}{2}\\
-D(h) & =E_{0}\left(\epsilon_{1}+\frac{\epsilon_{0}-\epsilon_{1}}{2}\right)=E_{0}\frac{\epsilon_{0}}{2}
+P(x) & =\frac{E_{\mathrm{ext}}}{\alpha}\left\{ 1-\frac{\cosh[(x-h/2)/\xi]}{\cosh(h/2\xi)}\right\} \\
+E(x) & =\alpha P-\delta\frac{\partial^{2}P}{\partial x^{2}}\\
+\xi^{2} & =\frac{\delta}{\alpha}\\
+E(x) & =\alpha\frac{E_{ext}}{\alpha}\left\{ 1-\frac{\cosh[(x-h/2)/\xi]}{\cosh(h/2\xi)}\right\} +\delta\frac{E_{\mathrm{ext}}}{\alpha\xi^{2}}\frac{\cosh[(x-h/2)/\xi]}{\cosh(h/2\xi)}\\
+E(x) & =E_{ext}
+\end{align*}
+
+\end_inset
+
+Это решение не удовлетворяет 
+\begin_inset Formula $\partial_{x}D(x)=0$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Standard
+Если попробовать нашим способом с E = const 
+\begin_inset Formula 
+\begin{align*}
+D(x) & =\text{\ensuremath{\epsilon_{1}E+E(\epsilon_{0}-\epsilon_{1})\frac{\beta}{2\xi}}}\left(\int\limits _{x}^{h}e^{-\beta\frac{x-x'}{\xi}}dx'+\int\limits _{-h}^{x}e^{\beta\frac{x-x'}{\xi}}dx'\right)\\
+ & =\epsilon_{1}E+E(\epsilon_{0}-\epsilon_{1})\frac{\beta}{2\xi}\left(e^{-\beta\frac{x}{\xi}}\frac{\xi}{\beta}\left(e^{\beta\frac{h}{\xi}}-e^{\beta\frac{x}{\xi}}\right)-e^{\beta\frac{x}{\xi}}\frac{\xi}{\beta}\left(e^{\beta\frac{x}{\xi}}-e^{-\beta\frac{h}{\xi}}\right)\right)\\
+ & =\epsilon_{1}E+E(\epsilon_{0}-\epsilon_{1})\left(-1-\ch\left[\frac{\beta}{\xi}\left(x-h\right)\right]\right)=\\
+ & =E\epsilon_{0}-E(\epsilon_{0}-\epsilon_{1})\ch\left[\frac{\beta}{\xi}\left(x-h\right)\right]\\
+P(x) & =\frac{1}{4\pi}\left(D(x)-E(x)\right)=\frac{E}{4\pi}\left\{ (\epsilon_{0}-1)-(\epsilon_{0}-\epsilon_{1})\ch\left[\frac{\beta}{\xi}\left(x-h\right)\right]\right\} 
 \end{align*}
 
 \end_inset
@@ -308,11 +322,30 @@ D(h) & =E_{0}\left(\epsilon_{1}+\frac{\epsilon_{0}-\epsilon_{1}}{2}\right)=E_{0}
 \end_layout
 
 \begin_layout Standard
-Скорее всего мы потеряли 2 где-то перед 
-\begin_inset Formula $(\epsilon_{0}-\epsilon_{1})\left\{ 1-\left[1+\beta e^{-\frac{h}{\xi}}\right]e^{-\beta\frac{h}{\xi}}\ch\left(\beta\frac{x}{\xi}\right)\right\} $
+Если предположить, что 
+\begin_inset Formula $\epsilon_{1}=1$
+\end_inset
+
+(согласно электродинамике сплошных сред пар.
+ 78, например ), то получаем, что-то отдаленно напоминающее результат Таганцева.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+P(x) & =\frac{E(\epsilon_{0}-\epsilon_{1})}{4\pi}\left(1-\ch\left[\frac{\beta}{\xi}\left(x-h\right)\right]\right)\\
+ & \text{Переписывая в его обозначениях(у него пластины в 0 и в h, а у нас в \ensuremath{\pm h} ) }\\
+P(x) & =\frac{E_{ext}}{\alpha}\left(1-\ch\left[\frac{\beta}{\xi}(x-\frac{h}{2})\right]\right)
+\end{align*}
+
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Если я правильно понимаю, то его формула получилась из формулы (20) Кречшмера.
+ Попробую разобраться как это получилось.
 \end_layout
 
 \end_body
