@@ -25,6 +25,8 @@
 
 \global\long\def\sh{\operatorname{sh}}%
 
+\global\long\def\th{\operatorname{th}}%
+
 
 \section{K(x)}
 
@@ -33,7 +35,7 @@
 \epsilon(q) & =\epsilon_{1}\epsilon_{0}\frac{1+(q\xi)^{2}}{\epsilon_{1}+\epsilon_{0}(q\xi)^{2}}\\
 K(x) & =\frac{1}{2\pi}\epsilon_{0}\epsilon_{1}\int\limits _{-\infty}^{+\infty}\frac{1+(q\xi)^{2}}{\epsilon_{1}+\epsilon_{0}(q\xi)}e^{iqx}dq=\\
  & =\frac{\epsilon_{1}}{2\pi}\int e^{iqx}(1+\frac{\epsilon_{0}-\epsilon_{1}}{\epsilon_{1}+\epsilon_{0}(q\xi)^{2}})dq=\\
- & =\epsilon_{1}\delta(x)+(\epsilon_{0}-\epsilon_{1})\frac{\beta}{2\xi}e^{-\beta\frac{|x|}{\epsilon}}
+ & =\epsilon_{1}\delta(x)+(\epsilon_{0}-\epsilon_{1})\frac{\beta}{2\xi}e^{-\beta\frac{|x|}{\xi}}
 \end{align*}
 
 
@@ -50,7 +52,7 @@ $D_{1}(x)=\int\epsilon_{1}\delta(x-x')\left(E_{0}+E_{1}e^{-\frac{h}{\xi}}\ch(\fr
 \subsection{$D_{2}$}
 
 \begin{align*}
-D_{2}(x) & =\frac{\beta}{2\xi}(\epsilon_{0}-\epsilon_{1})E_{0}\int\sign(x-x')e^{-\beta\frac{|x-x'|}{\epsilon}}dx'=\\
+D_{2}(x) & =\frac{\beta}{2\xi}(\epsilon_{0}-\epsilon_{1})E_{0}\int e^{-\beta\frac{|x-x'|}{\epsilon}}dx'=\\
  & =\frac{\beta}{2\xi}(\epsilon_{0}-\epsilon_{1})E_{0}\left[\int\limits _{-h}^{x}\exp(-\beta\frac{x-x'}{\xi})dx'+\int\limits _{x}^{h}\exp(\beta\frac{x-x'}{\xi})\right]=\\
  & =\frac{\beta}{2\xi}(\epsilon_{0}-\epsilon_{1})E_{0}\left[e^{-\beta\frac{x}{\xi}}\frac{\xi}{\beta}\left(e^{\beta\frac{x}{\xi}}-e^{-\beta\frac{h}{\xi}}\right)-e^{\beta\frac{x}{\xi}}\frac{\xi}{\beta}\left(e^{-\beta\frac{h}{\xi}}-e^{-\beta\frac{x}{\xi}}\right)\right]=\\
  & =(\epsilon_{0}-\epsilon_{1})E_{0}\left(1-e^{-\beta\frac{h}{\xi}}\ch\left(\beta\frac{x}{\xi}\right)\right)
@@ -77,33 +79,109 @@ D_{3}(x) & =\frac{\beta}{2\xi}(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}
 \begin{align*}
 D(x) & =D_{1}(x)+D_{2}(x)+D_{3}(x)=\\
  & =\epsilon_{1}E_{0}+\epsilon_{1}E_{1}e^{-\frac{h}{\xi}}\ch(\frac{x}{\xi})+(\epsilon_{0}-\epsilon_{1})E_{0}\left(1-e^{-\beta\frac{h}{\xi}}\ch\left(\beta\frac{x}{\xi}\right)\right)+\\
- & +\frac{\beta}{1-\beta^{2}}(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}\Bigg[-\beta\ch(\frac{x}{\xi})+\ch(\beta\frac{x}{\xi})e^{-\beta\frac{h}{\xi}}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)\Bigg]
+ & +\frac{\beta}{1-\beta^{2}}(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}\Bigg[-\beta\ch(\frac{x}{\xi})+\ch(\beta\frac{x}{\xi})e^{-\beta\frac{h}{\xi}}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)\Bigg]\\
+ & =\epsilon_{0}E_{0}+\ch\left(\beta\frac{x}{\xi}\right)e^{-\beta\frac{h}{\xi}}\left[-(\epsilon_{0}-\epsilon_{1})E_{0}+\frac{E_{1}\epsilon_{1}}{\beta}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)\right]
 \end{align*}
 
 
 \section{$\frac{d}{dx}D(x)=0$ }
 
-\begin{align*}
-0 & =\epsilon_{1}E_{1}e^{-\frac{h}{\xi}}\sh(\frac{x}{\xi})+(\epsilon_{0}-\epsilon_{1})E_{0}\beta e^{-\beta\frac{h}{\xi}}\sh\left(\beta\frac{x}{\xi}\right)+\frac{\beta}{1-\beta^{2}}(\epsilon_{0}-\epsilon_{1})E_{1}e^{-\frac{h}{\xi}}\Bigg[-\beta\sh(\frac{x}{\xi})+\beta\sh(\beta\frac{x}{\xi})e^{-\beta\frac{h}{\xi}}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)\Bigg]\\
-\frac{\beta^{2}}{1-\beta^{2}} & (\epsilon_{0}-\epsilon_{1})=\frac{\frac{\epsilon_{1}}{\epsilon_{0}}}{1-\frac{\epsilon_{1}}{\epsilon_{0}}}(\epsilon_{0}-\epsilon_{1})=\epsilon_{1}\\
-0 & =\left[(\epsilon_{0}-\epsilon_{1})E_{0}\beta+\epsilon_{1}E_{1}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)\right]\sh(\beta\frac{x}{\xi})e^{-\beta\frac{h}{\xi}}\\
-E_{1} & =-\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\epsilon_{1}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}E_{0}\\
-D(x) & =E_{0}\Bigg\{\epsilon_{1}-\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\ch\left(\frac{x}{\xi}\right)+(\epsilon_{0}-\epsilon_{1})\left(1-e^{-\beta\frac{h}{\xi}}\ch\left(\beta\frac{x}{\xi}\right)\right)-\\
- & -\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\Bigg[-\beta\ch\left(\frac{x}{\xi}\right)+\ch(\beta\frac{x}{\xi})e^{-\beta\frac{h}{\xi}}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)\Bigg]\Bigg\}=\\
- & =E_{0}\text{\ensuremath{\left\{ \epsilon_{1}-\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\ch\left(\frac{x}{\xi}\right)\left[1-\beta\right]+(\epsilon_{0}-\epsilon_{1})\left\{ 1-\left[1+\beta e^{-\frac{h}{\xi}}\right]e^{-\beta\frac{h}{\xi}}\ch\left(\beta\frac{x}{\xi}\right)\right\} \right\} }}
-\end{align*}
+$E_{1}=E_{0}\beta\frac{\epsilon_{0}-\epsilon_{1}}{\epsilon_{1}\left[\sh\left(\frac{h}{\xi}\right)+\beta\ \ch\left(\frac{h}{\xi}\right)\right]}$
 
 \textcyr{\CYRI\cyrt\cyro\cyrg\cyro} \textcyr{\cyrm\cyrery} \textcyr{\cyri\cyrm\cyre\cyre\cyrm} 
 
-$D(x)=E_{0}\text{\ensuremath{\left\{  \epsilon_{1}-\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\ch\left(\frac{x}{\xi}\right)\left[1-\beta\right]+(\epsilon_{0}-\epsilon_{1})\left\{  1-\left[1+\beta e^{-\frac{h}{\xi}}\right]e^{-\beta\frac{h}{\xi}}\ch\left(\beta\frac{x}{\xi}\right)\right\}  \right\} } }$
+$D=E_{0}\epsilon_{0}$
 
-$E(x)=E_{0}\left(1-\frac{2(\epsilon_{0}-\epsilon_{1})\beta}{\epsilon_{1}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\ch(\frac{x}{\xi})\right)$
+$E(x)=E_{0}\left(1+\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\epsilon_{1}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\ch(\frac{x}{\xi})\right)$
 
-\textcyr{\CYRK\cyro\cyrt\cyro\cyrr\cyrery\cyre} \textcyr{\cyrv\cyrs\cyre}
-\textcyr{\cyrr\cyra\cyrv\cyrn\cyro} \textcyr{\cyrr\cyra\cyrz\cyrl\cyri\cyrch\cyra\cyryu\cyrt\cyrs\cyrya}
-\textcyr{\cyrk\cyra\cyrk} \textcyr{\cyrm\cyri\cyrn\cyri\cyrm\cyru\cyrm}
-``\textcyr{\cyrp\cyro} \textcyr{\cyrr\cyra\cyrz\cyrm\cyre\cyrr\cyrn\cyro\cyrs\cyrt\cyri}''
-$\epsilon$ \textcyr{\cyrp\cyrr\cyri} x = h. 
+\textcyr{\CYRCH\cyrt\cyro} \textcyr{\cyrp\cyro\cyrl\cyrn\cyro\cyrs\cyrt\cyrsftsn\cyryu}
+\textcyr{\cyrs\cyro\cyro\cyrt\cyrv\cyre\cyrt\cyrs\cyrt\cyrv\cyru\cyre\cyrt}
+\textcyr{\cyrn\cyra\cyrp\cyri\cyrs\cyra\cyrn\cyrn\cyro\cyrm\cyru}
+\textcyr{\cyrv} \textcyr{\cyrz\cyra\cyrm\cyre\cyrt\cyrk\cyre}. \textcyr{\CYRV\cyri\cyrd\cyri\cyrm\cyro},
+\textcyr{\cyro\cyrt\cyrs\cyru\cyrt\cyrs\cyrt\cyrv\cyri\cyre} $(\epsilon_{0}-\epsilon_{1})$
+\textcyr{\cyrp\cyre\cyrr\cyre\cyrd} \textcyr{\cyrv\cyrt\cyro\cyrr\cyrery\cyrm}
+\textcyr{\cyrs\cyrl\cyra\cyrg\cyra\cyre\cyrm\cyrery\cyrm} \textcyr{\cyrv}
+\textcyr{\cyrf\cyro\cyrr\cyrm\cyru\cyrl\cyre} (6) \textcyr{\cyrv}
+\textcyr{\cyrz\cyra\cyrm\cyre\cyrt\cyrk\cyre} - \textcyr{\cyrerev\cyrt\cyro}
+\textcyr{\cyrp\cyrr\cyro\cyrs\cyrt\cyro} \textcyr{\cyro\cyrp\cyre\cyrch\cyra\cyrt\cyrk\cyra},
+\textcyr{\cyra} \textcyr{\cyrn\cyre} \textcyr{\cyrn\cyre\cyrp\cyrr\cyra\cyrv\cyri\cyrl\cyrsftsn\cyrn\cyro\cyre}
+\textcyr{\cyrr\cyre\cyrsh\cyre\cyrn\cyri\cyre}. \textcyr{\CYRV\cyrery\cyrr\cyra\cyrzh\cyra\cyrya}
+P(x)
 
-\textcyr{\CYRA} \textcyr{\cyrz\cyrn\cyra\cyrch\cyri\cyrt} $D(x)\neq E(x)\Rightarrow P(h)=\frac{1}{4\pi}\left(D(h)-E(h)\right)\neq0$
+$P(x)=\frac{E_{0}}{4\pi}\left((\epsilon_{0}-1)-\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\epsilon_{1}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\ch(\frac{x}{\xi})\right)$
+
+\section{K(x)}
+
+\textcyr{\CYRN\cyra\cyrishrt\cyrd\cyre\cyrm} \textcyr{\cyrf\cyru\cyrn\cyrk\cyrc\cyri\cyryu}
+\textcyr{\CYRG\cyrr\cyri\cyrn\cyra} \textcyr{\cyru\cyrr\cyra\cyrv\cyrn\cyre\cyrn\cyri\cyrya}
+(2.19)
+\begin{align*}
+\delta(x-x') & =\alpha G(x')-\delta G^{''}(x')\\
+G(x,x') & =\begin{cases}
+C_{1}e^{-\sqrt{\frac{\alpha}{\delta}}(x-x')}+C_{2}e^{\sqrt{\frac{\alpha}{\delta}}(x-x')}, & x'<x\\
+C_{3}e^{-\sqrt{\frac{\alpha}{\delta}}(x-x')}+C_{4}e^{\sqrt{\frac{\alpha}{\delta}}(x-x')}, & x'>x
+\end{cases}\\
+\text{\textcyr{\CYRI}\textcyr{\cyrz}} & \text{\textcyr{\cyrn}\textcyr{\cyre}\textcyr{\cyrp}\textcyr{\cyrr}\textcyr{\cyre}\textcyr{\cyrr}\textcyr{\cyrery}\textcyr{\cyrv}\textcyr{\cyrn}\textcyr{\cyro}\textcyr{\cyrs}\textcyr{\cyrt}\textcyr{\cyri} \textcyr{\cyri} \textcyr{\cyrs}\textcyr{\cyrk}\textcyr{\cyra}\textcyr{\cyrch}\textcyr{\cyrk}\textcyr{\cyra} \textcyr{\cyrp}\textcyr{\cyrr}\textcyr{\cyro}\textcyr{\cyri}\textcyr{\cyrz}\textcyr{\cyrv}\textcyr{\cyro}\textcyr{\cyrd}\textcyr{\cyrn}\textcyr{\cyro}\textcyr{\cyrishrt} }\\
+ & \begin{cases}
+G(x,x+0)=G(x,x-0)\\
+-\delta\left[G^{'}(x,x+0)-G^{'}(x,x-0)\right]=1
+\end{cases}\\
+ & \begin{cases}
+C_{1}+C_{2}=C_{3}+C_{4}\\
+-C_{1}+C_{2}+C_{3}-C_{4}=-\frac{1}{\sqrt{\delta\alpha}}
+\end{cases}\\
+ & \begin{cases}
+C_{1}-C_{3}=\frac{1}{2\sqrt{\delta\alpha}}\\
+C_{2}-C_{4}=-\frac{1}{2\sqrt{\delta\alpha}}
+\end{cases}
+\end{align*}
+\\
+\textcyr{\CYRD\cyra\cyrl\cyrsftsn\cyrsh\cyre} \textcyr{\cyri\cyrd\cyru\cyrt}
+\textcyr{\cyrr\cyra\cyrz\cyrl\cyri\cyrch\cyri\cyrya}. \textcyr{\CYRU}
+\textcyr{\CYRT\cyra\cyrg\cyra\cyrn\cyrc\cyre\cyrv\cyra} \textcyr{\cyrg\cyrr\cyra\cyrn}
+\textcyr{\cyru\cyrs\cyrl\cyro\cyrv\cyri\cyrya} $G(x,-h)=G(x,h)=0$.
+\textcyr{\CYRV} \textcyr{\cyrt\cyre\cyrr\cyrm\cyri\cyrn\cyra\cyrh}
+$C_{1},C_{2}$
+
+\begin{align*}
+ & \begin{cases}
+C_{1}e^{-\sqrt{\frac{\alpha}{\delta}}(x+h)}+C_{2}e^{\sqrt{\frac{\alpha}{\delta}}(x+h)}=0\\
+C_{3}e^{-\sqrt{\frac{\alpha}{\delta}}(x-h)}+C_{4}e^{\sqrt{\frac{\alpha}{\delta}}(x-h)}=0
+\end{cases}\\
+ & \text{\textcyr{\CYRI}\textcyr{\cyrt}\textcyr{\cyro}\textcyr{\cyrg}\textcyr{\cyro} \textcyr{\cyri}\textcyr{\cyrm}\textcyr{\cyre}\textcyr{\cyre}\textcyr{\cyrm} \textcyr{\cyrs}\textcyr{\cyri}\textcyr{\cyrs}\textcyr{\cyrt}\textcyr{\cyre}\textcyr{\cyrm}\textcyr{\cyru} \textcyr{\cyrn}\textcyr{\cyra} \textcyr{\cyrk}\textcyr{\cyro}\textcyr{\cyrerev}\textcyr{\cyrf}\textcyr{\cyri}\textcyr{\cyrc}\textcyr{\cyri}\textcyr{\cyre}\textcyr{\cyrn}\textcyr{\cyrt}\textcyr{\cyrery}}\\
+ & \begin{cases}
+C_{1}=-C_{2}e^{2\sqrt{\frac{\alpha}{\delta}}(x+h)}\\
+C_{3}=-C_{4}e^{2\sqrt{\frac{\alpha}{\delta}}(x-h)}\\
+C_{1}-C_{3}=\frac{1}{2\sqrt{\delta\alpha}}\\
+C_{2}-C_{4}=-\frac{1}{2\sqrt{\delta\alpha}}
+\end{cases}\\
+ & \begin{cases}
+-C_{2}e^{2\sqrt{\frac{\alpha}{\delta}}(x+h)}+C_{4}e^{2\sqrt{\frac{\alpha}{\delta}}(x-h)}=\frac{1}{2\sqrt{\delta\alpha}}\\
+C_{2}-C_{4}=-\frac{1}{2\sqrt{\delta\alpha}}
+\end{cases}\\
+ & -C_{4}e^{2\sqrt{\frac{\alpha}{\delta}}(x+h)}+\frac{1}{2\sqrt{\delta\alpha}}e^{2\sqrt{\frac{\alpha}{\delta}}(x+h)}+C_{4}e^{2\sqrt{\frac{\alpha}{\delta}}(x-h)}=\frac{1}{2\sqrt{\delta\alpha}}\\
+ & -2C_{4}e^{2\sqrt{\frac{\alpha}{\delta}}x}\sh\left(2\sqrt{\frac{\alpha}{\delta}}h\right)=\frac{1}{2\sqrt{\delta\alpha}}\left(1-e^{2\sqrt{\frac{\alpha}{\delta}}(x+h)}\right)\\
+ & C_{4}=-\frac{e^{-2\sqrt{\frac{\alpha}{\delta}}x}-e^{2\sqrt{\frac{\alpha}{\delta}}h}}{4\sqrt{\delta\alpha}\ \sh\left(2\sqrt{\frac{\alpha}{\delta}}h\right)}\\
+ & C_{2}=\frac{\left(-e^{-2\sqrt{\frac{\alpha}{\delta}}x}+e^{2\sqrt{\frac{\alpha}{\delta}}h}-2\sh\left(2\sqrt{\frac{\alpha}{\delta}}h\right)\right)}{4\sqrt{\delta\alpha}\ \sh\left(2\sqrt{\frac{\alpha}{\delta}}h\right)}=\frac{-e^{-2\sqrt{\frac{\alpha}{\delta}}x}+e^{-2\sqrt{\frac{\alpha}{\delta}}h}}{4\sqrt{\delta\alpha}\ \sh\left(2\sqrt{\frac{\alpha}{\delta}}h\right)}\\
+ & C_{3}=\frac{e^{-2\sqrt{\frac{\alpha}{\delta}}h}-e^{2\sqrt{\frac{\alpha}{\delta}}x}}{4\sqrt{\delta\alpha}\ \sh\left(2\sqrt{\frac{\alpha}{\delta}}h\right)}\\
+ & C_{1}=\frac{e^{2\sqrt{\frac{\alpha}{\delta}}h}-e^{2\sqrt{\frac{\alpha}{\delta}}x}}{4\sqrt{\delta\alpha}\ \sh\left(2\sqrt{\frac{\alpha}{\delta}}h\right)}\\
+G(x,x') & =\begin{cases}
+\frac{1}{2\sqrt{\delta\alpha}\ \sh\left(2\sqrt{\frac{\alpha}{\delta}}h\right)}\left[\ch\left(\sqrt{\frac{\alpha}{\delta}}\left\{ x-x'-2h\right\} \right)-\ch\left[\sqrt{\frac{\alpha}{\delta}}(x+x')\right]\right] & x'<x\\
+\frac{1}{2\sqrt{\delta\alpha}\ \sh\left(2\sqrt{\frac{\alpha}{\delta}}h\right)}\left[\ch\left(\sqrt{\frac{\alpha}{\delta}}\left\{ x-x'+2h\right\} \right)-\ch\left[\sqrt{\frac{\alpha}{\delta}}(x+x')\right]\right] & x'>x
+\end{cases}\\
+G(x,x') & =\begin{cases}
+\frac{1}{\sqrt{\delta\alpha}\ \sh\left(2\sqrt{\frac{\alpha}{\delta}}h\right)}\sh\left[\sqrt{\frac{\alpha}{\delta}}\left(h+x'\right)\right]\sh\left[\sqrt{\frac{\alpha}{\delta}}\left(h-x\right)\right] & x'<x\\
+\frac{1}{\sqrt{\delta\alpha}\ \sh\left(2\sqrt{\frac{\alpha}{\delta}}h\right)}\sh\left[\sqrt{\frac{\alpha}{\delta}}\left(h-x'\right)\right]\sh\left[\sqrt{\frac{\alpha}{\delta}}\left(h+x\right)\right] & x'>x
+\end{cases}
+\end{align*}
+\\
+\textcyr{\CYRU} \textcyr{\cyrn\cyra\cyrs} \textcyr{\cyrzh\cyre} \textcyr{\cyrya\cyrd\cyrr\cyro}
+\textcyr{\cyrv\cyrery\cyrg\cyrl\cyrya\cyrd\cyri\cyrt} \textcyr{\cyrn\cyre\cyrs\cyrk\cyro\cyrl\cyrsftsn\cyrk\cyro}
+\textcyr{\cyri\cyrn\cyra\cyrch\cyre}. \textcyr{\CYRO\cyrn\cyro} \textcyr{\cyrs\cyro\cyro\cyrt\cyrv\cyrt\cyre\cyrt\cyrs\cyrt\cyrv\cyru\cyre\cyrt}
+\textcyr{\cyrg\cyrr\cyra\cyrn} \textcyr{\cyru\cyrs\cyrl\cyro\cyrv\cyri\cyrya\cyrm}
+\textcyr{\cyrt\cyra\cyrk\cyri\cyrm}, \textcyr{\cyrch\cyrt\cyro} $C_{2}=C_{3}=0$.
+\textcyr{\CYRE\cyrs\cyrl\cyri} \textcyr{\cyrr\cyra\cyrs\cyrs\cyrm\cyro\cyrt\cyrr\cyre\cyrt\cyrsftsn}
+\textcyr{\cyrp\cyrr\cyre\cyrd\cyre\cyrl} $\sqrt{\frac{\alpha}{\delta}}h\gg x\to\infty$
+\textcyr{\cyrt\cyro} \textcyr{\cyrk\cyra\cyrk} \textcyr{\cyrv\cyri\cyrd\cyrn\cyro}
+$C_{2},C_{3}\to0$ \textcyr{\cyri} $G\to\#e^{-\#|x-x'|}$ 
 \end{document}

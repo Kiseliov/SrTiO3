@@ -384,13 +384,13 @@ P(x)
 \begin{gather}
 \begin{cases}
 \frac{d(E+4\pi P)}{dx}=0\\
-E=P-\xi_{1}^{2}\frac{\partial^{2}P}{\partial x^{2}}\\
+E=\alpha P-\xi_{1}\frac{\partial^{2}P}{\partial x^{2}}\\
 D(\pm h)=4\pi\sigma
 \end{cases}\\
 E+4\pi P=D=const\\
-\frac{\partial^{2}P}{\partial x^{2}}-\frac{(4\pi+1)}{\xi_{1}^{2}}P=\frac{1}{\xi_{1}^{2}}D\\
-P(x)=A_{1}e^{\frac{4\pi+1}{\xi_{1}}x}+A_{2}e^{-\frac{4\pi+1}{\xi_{1}}x}-\frac{1}{4\pi+1}D\\
-E(x)=\left(\frac{4\pi+2}{4\pi+1}\right)D-4\pi A_{1}e^{\frac{4\pi+\alpha}{\delta}x}-4\pi A_{2}e^{-\frac{4\pi+\alpha}{\delta}x}\\
+\frac{\partial^{2}P}{\partial x^{2}}-\frac{(4\pi+1)}{\xi_{1}}P=D\\
+P(x)=A_{1}e^{\frac{4\pi+1}{\xi_{1}}x}+A_{2}e^{-\frac{4\pi+1}{\xi}x}-\frac{\xi}{4\pi+1}D\\
+E(x)=\left(\frac{\xi}{4\pi+1}+1\right)D-4\pi A_{1}e^{\frac{4\pi+\alpha}{\delta}x}-4\pi A_{2}e^{-\frac{4\pi+\alpha}{\delta}x}\\
 \text{В силу симметрийных соображений }A_{1}=A_{2}\nonumber \\
 \text{Обозначим }A_{1}=E_{1}\nonumber \\
 E(x)=E_{0}

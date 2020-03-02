@@ -108,15 +108,6 @@
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset FormulaMacro
-\newcommand{\th}{\operatorname{th}}
-{\mathrm{th}}
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 K(x)
 \end_layout
@@ -277,260 +268,35 @@ D(x) & =D_{1}(x)+D_{2}(x)+D_{3}(x)=\\
 
  перед вторым слагаемым в формуле (6) в заметке - это просто опечатка, а
  не неправильное решение.
- Выражая P(x)
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $P(x)=\frac{E_{0}}{4\pi}\left((\epsilon_{0}-1)-\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\epsilon_{1}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\ch(\frac{x}{\xi})\right)$
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
-G(x)
+K(x)
 \end_layout
 
 \begin_layout Standard
 Найдем функцию Грина уравнения (2.19)
 \begin_inset Formula 
 \begin{align*}
-\delta(x-x') & =\alpha G(x')-\delta G^{''}(x')\\
-G(x,x') & =\begin{cases}
-C_{1}e^{-\sqrt{\frac{\alpha}{\delta}}(x-x')}+C_{2}e^{\sqrt{\frac{\alpha}{\delta}}(x-x')}, & x'<x\\
-C_{3}e^{-\sqrt{\frac{\alpha}{\delta}}(x-x')}+C_{4}e^{\sqrt{\frac{\alpha}{\delta}}(x-x')}, & x'>x
+\delta(x) & =\alpha G(x)-\delta G^{''}(x)\\
+G & =\begin{cases}
+C_{1}e^{-\frac{\alpha}{\delta}x}+C_{2}e^{\frac{\alpha}{\delta}x} & x<0\\
+C_{3}e^{-\frac{\alpha}{\delta}x}+C_{4}e^{\frac{\alpha}{\delta}x} & x>0
 \end{cases}\\
 \text{Из} & \text{непрерывности и скачка производной }\\
  & \begin{cases}
-G(x,x+0)=G(x,x-0)\\
--\delta\left[G^{'}(x,x+0)-G^{'}(x,x-0)\right]=1
+G(+0)=G(-0)\\
+-\delta\left[G^{'}(+0)-G^{'}(-0)\right]=1
 \end{cases}\\
  & \begin{cases}
 C_{1}+C_{2}=C_{3}+C_{4}\\
--C_{1}+C_{2}+C_{3}-C_{4}=-\frac{1}{\sqrt{\delta\alpha}}
-\end{cases}\\
- & \begin{cases}
-C_{1}-C_{3}=\frac{1}{2\sqrt{\delta\alpha}}\\
-C_{2}-C_{4}=-\frac{1}{2\sqrt{\delta\alpha}}
+-\delta\left[-\frac{}{}-G^{'}(-0)\right]=1
 \end{cases}
 \end{align*}
 
 \end_inset
 
 
-\begin_inset Newline newline
-\end_inset
-
-У Таганцева гран условия 
-\begin_inset Formula $G(x,-h)=G(x,h)=0$
-\end_inset
-
-.
- В терминах 
-\begin_inset Formula $C_{1},C_{2}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{align*}
- & \begin{cases}
-C_{1}e^{-\sqrt{\frac{\alpha}{\delta}}(x+h)}+C_{2}e^{\sqrt{\frac{\alpha}{\delta}}(x+h)}=0\\
-C_{3}e^{-\sqrt{\frac{\alpha}{\delta}}(x-h)}+C_{4}e^{\sqrt{\frac{\alpha}{\delta}}(x-h)}=0
-\end{cases}\\
- & \text{Итого имеем систему на коэфициенты}\\
- & \begin{cases}
-C_{1}=-C_{2}e^{2\sqrt{\frac{\alpha}{\delta}}(x+h)}\\
-C_{3}=-C_{4}e^{2\sqrt{\frac{\alpha}{\delta}}(x-h)}\\
-C_{1}-C_{3}=\frac{1}{2\sqrt{\delta\alpha}}\\
-C_{2}-C_{4}=-\frac{1}{2\sqrt{\delta\alpha}}
-\end{cases}\\
- & \begin{cases}
--C_{2}e^{2\sqrt{\frac{\alpha}{\delta}}(x+h)}+C_{4}e^{2\sqrt{\frac{\alpha}{\delta}}(x-h)}=\frac{1}{2\sqrt{\delta\alpha}}\\
-C_{2}-C_{4}=-\frac{1}{2\sqrt{\delta\alpha}}
-\end{cases}\\
- & -C_{4}e^{2\sqrt{\frac{\alpha}{\delta}}(x+h)}+\frac{1}{2\sqrt{\delta\alpha}}e^{2\sqrt{\frac{\alpha}{\delta}}(x+h)}+C_{4}e^{2\sqrt{\frac{\alpha}{\delta}}(x-h)}=\frac{1}{2\sqrt{\delta\alpha}}\\
- & -2C_{4}e^{2\sqrt{\frac{\alpha}{\delta}}x}\sh\left(2\sqrt{\frac{\alpha}{\delta}}h\right)=\frac{1}{2\sqrt{\delta\alpha}}\left(1-e^{2\sqrt{\frac{\alpha}{\delta}}(x+h)}\right)\\
- & C_{4}=-\frac{e^{-2\sqrt{\frac{\alpha}{\delta}}x}-e^{2\sqrt{\frac{\alpha}{\delta}}h}}{4\sqrt{\delta\alpha}\ \sh\left(2\sqrt{\frac{\alpha}{\delta}}h\right)}\\
- & C_{2}=\frac{\left(-e^{-2\sqrt{\frac{\alpha}{\delta}}x}+e^{2\sqrt{\frac{\alpha}{\delta}}h}-2\sh\left(2\sqrt{\frac{\alpha}{\delta}}h\right)\right)}{4\sqrt{\delta\alpha}\ \sh\left(2\sqrt{\frac{\alpha}{\delta}}h\right)}=\frac{-e^{-2\sqrt{\frac{\alpha}{\delta}}x}+e^{-2\sqrt{\frac{\alpha}{\delta}}h}}{4\sqrt{\delta\alpha}\ \sh\left(2\sqrt{\frac{\alpha}{\delta}}h\right)}\\
- & C_{3}=\frac{e^{-2\sqrt{\frac{\alpha}{\delta}}h}-e^{2\sqrt{\frac{\alpha}{\delta}}x}}{4\sqrt{\delta\alpha}\ \sh\left(2\sqrt{\frac{\alpha}{\delta}}h\right)}\\
- & C_{1}=\frac{e^{2\sqrt{\frac{\alpha}{\delta}}h}-e^{2\sqrt{\frac{\alpha}{\delta}}x}}{4\sqrt{\delta\alpha}\ \sh\left(2\sqrt{\frac{\alpha}{\delta}}h\right)}\\
-G(x,x') & =\begin{cases}
-\frac{1}{2\sqrt{\delta\alpha}\ \sh\left(2\sqrt{\frac{\alpha}{\delta}}h\right)}\left[\ch\left(\sqrt{\frac{\alpha}{\delta}}\left\{ x-x'-2h\right\} \right)-\ch\left[\sqrt{\frac{\alpha}{\delta}}(x+x')\right]\right] & x'<x\\
-\frac{1}{2\sqrt{\delta\alpha}\ \sh\left(2\sqrt{\frac{\alpha}{\delta}}h\right)}\left[\ch\left(\sqrt{\frac{\alpha}{\delta}}\left\{ x-x'+2h\right\} \right)-\ch\left[\sqrt{\frac{\alpha}{\delta}}(x+x')\right]\right] & x'>x
-\end{cases}\\
-G(x,x') & =\begin{cases}
-\frac{1}{\sqrt{\delta\alpha}\ \sh\left(2\sqrt{\frac{\alpha}{\delta}}h\right)}\sh\left[\sqrt{\frac{\alpha}{\delta}}\left(h+x'\right)\right]\sh\left[\sqrt{\frac{\alpha}{\delta}}\left(h-x\right)\right] & x'<x\\
-\frac{1}{\sqrt{\delta\alpha}\ \sh\left(2\sqrt{\frac{\alpha}{\delta}}h\right)}\sh\left[\sqrt{\frac{\alpha}{\delta}}\left(h-x'\right)\right]\sh\left[\sqrt{\frac{\alpha}{\delta}}\left(h+x\right)\right] & x'>x
-\end{cases}
-\end{align*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-P(x)
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{gather}
-\frac{d(E+4\pi P)}{dx}=0\\
-E=-4\pi P+C\\
-\end{gather}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Соответствие констант
-\end_layout
-
-\begin_layout Standard
-Найдем выражение для P(x) в рамках нашей модели
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{align*}
-P(x) & =\frac{1}{4\pi}\left(D(x)-E(x)\right)=\frac{1}{4\pi}\left(\int\limits _{-h}^{h}\left[(\epsilon_{1}-1)\delta(x-x')+\frac{\beta}{2\xi}(\epsilon_{0}-\epsilon_{1})e^{-\beta\frac{|x-x'|}{\xi}}\right]E(x')dx'\right)\\
- & \text{Согласно ЛЛ считая, что}\ \epsilon_{1}\approx1\\
-P(x) & =\intop_{-h}^{h}\frac{\beta(\epsilon_{0}-\epsilon_{1})}{8\pi\xi}e^{-\beta\frac{|x-x'|}{\xi}}E(x')dx
-\end{align*}
-
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-Рассматривая G(x,x') в вышеупомянутом пределе
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{align*}
-G(x,x') & =\frac{1}{\sqrt{\delta\alpha}}e^{-\sqrt{\frac{\alpha}{\delta}}|x-x'|}\\
-\text{Таким} & \text{образом}\\
- & \begin{cases}
-\frac{1}{\sqrt{\delta\alpha}}=\frac{\beta(\epsilon_{0}-\epsilon_{1})}{8\pi\xi}\\
-\sqrt{\frac{\alpha}{\delta}}=\frac{\beta}{\xi}
-\end{cases}\\
- & \begin{cases}
-\alpha=\frac{8\pi}{\epsilon_{0}-\epsilon_{1}}\\
-\delta=\frac{8\pi\xi^{2}}{\beta^{2}(\epsilon_{0}-\epsilon_{1})}
-\end{cases}\\
-\xi^{T} & =\sqrt{\frac{\delta}{\alpha}}=\frac{\xi}{\beta}-\text{тут и далее верхним индексом T будем обозначать обозначения Таганцева}\\
-\xi_{1}^{T} & \approx\xi^{T}\sqrt{\frac{\kappa_{b}}{\kappa}}=\frac{\xi}{\beta}\sqrt{\frac{\epsilon_{1}}{\epsilon_{0}}}=\xi
-\end{align*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-\begin_inset Formula $\epsilon_{eff}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Согласно формуле (13) нашей заметке 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{align*}
-\epsilon_{eff} & =\frac{h}{h+\xi\gamma\ \sh\frac{h}{\xi}}\epsilon_{0}\\
-\gamma & =\frac{\epsilon_{0}-\epsilon_{1}}{\sqrt{\epsilon_{0}\epsilon_{1}}\left[\beta\ \ch\left(\frac{h}{\xi}\right)+\sh\left(\frac{h}{\xi}\right)\right]}\\
- & \text{Рассмотрим предел}\frac{h}{\xi}\gg1\text{и \ensuremath{\beta=\sqrt{\frac{\epsilon_{1}}{\epsilon_{0}}}\ll1}}\\
-\epsilon_{eff} & =\frac{h}{h+\xi\frac{\epsilon_{0}-\epsilon_{1}}{\sqrt{\epsilon_{0}\epsilon_{1}}\left[\beta\ c\th\left(\frac{h}{\xi}\right)+1\right]}}\epsilon_{0}=\frac{h}{h+\xi\frac{\epsilon_{0}}{\sqrt{\epsilon_{0}\epsilon_{1}}}}\epsilon_{0}=\frac{\epsilon_{0}}{1+\frac{\xi}{\beta h}}\\
-\epsilon_{eff} & =\epsilon_{0}\left(1-\frac{\xi}{\beta h}\right)
-\end{align*}
-
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-Если я правильно понял, то Таганцев находит среднее значение поляризации,
- 
-\begin_inset Newline newline
-\end_inset
-
-а потом говорит, что эффективная диэлектрическая проницаемость должна вести
- себя так же(см.
- переход от (2.23) к (2.24) например).
- Таким образом
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{align*}
-\bar{P}\sim\kappa_{eff} & =\kappa\left(1-2\frac{\xi_{1}^{T}}{h^{T}}\th\left(\frac{h^{T}}{2\xi_{1}^{T}}\right)\right)\\
-\kappa_{eff} & =\kappa\left(1-2\frac{\xi_{1}^{T}}{h^{T}}\right)\text{или в наших обозначениях}\\
-\epsilon_{eff} & =\epsilon_{0}\left(1-\frac{\xi}{h}\right)
-\end{align*}
-
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-Таким образом ответ в пределе различается и в наших обозначениях выглядит
- так
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{align*}
-\epsilon_{eff} & =\epsilon_{0}\left(1-\frac{\xi}{\beta h}\right)\\
-\epsilon_{eff} & =\epsilon_{0}\left(1-\frac{\xi}{h}\right)
-\end{align*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Однако мне представляется весьма странным то что при нахождении ядра для
- поляризации пришлось считать, что 
-\begin_inset Formula $\epsilon_{1}=1.$
-\end_inset
-
- Если это действительно так, а 
-\begin_inset Formula $\kappa$
-\end_inset
-
- очевидно тоже самое что 
-\begin_inset Formula $\epsilon_{0}$
-\end_inset
-
-(Таганцев явно пишет что это 
-\begin_inset Quotes eld
-\end_inset
-
-dielectic permittivity
-\begin_inset Quotes erd
-\end_inset
-
- после формулы (2.15) к примеру) то тогда и 
-\begin_inset Formula $\kappa_{b}$
-\end_inset
-
- должна быть единицей в силу нашего предположения.
- 
 \end_layout
 
 \end_body
