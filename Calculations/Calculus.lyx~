@@ -6,6 +6,9 @@
 \origin unavailable
 \textclass article
 \use_default_options true
+\begin_modules
+eqs-within-sections
+\end_modules
 \maintain_unincluded_children false
 \language english
 \language_package default
@@ -377,58 +380,29 @@ P(x)
 \end_layout
 
 \begin_layout Standard
+Будем решать систему записанную в (1).
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \begin{gather}
+\begin{cases}
 \frac{d(E+4\pi P)}{dx}=0\\
-E=-4\pi P+C\\
+\frac{1}{\alpha}E=P-\xi_{1}^{2}\frac{\partial^{2}P}{\partial x^{2}} & \text{где }\xi_{1}=\sqrt{\frac{\delta}{\alpha}}\\
+D=4\pi\sigma\\
+P(-h)=P(h)=0
+\end{cases}\\
+E=D-4\pi P\\
+\frac{\partial^{2}P}{\partial x^{2}}-\frac{(4\pi/\alpha+1)}{\xi_{1}^{2}}P=-\frac{1}{\alpha\xi_{1}^{2}}D\\
+P(x)=A_{1}e^{\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}x}+A_{2}e^{-\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}x}+\frac{1}{4\pi+\alpha}D\\
+\begin{cases}
+P(-h)=0=A_{1}e^{-\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}h}+A_{2}e^{\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}h}+\frac{1}{4\pi+\alpha}D\\
+P(h)=0=A_{1}e^{\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}h}+A_{2}e^{-\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}h}+\frac{1}{4\pi+\alpha}D
+\end{cases}\\
+A_{1}=A_{2}=-\frac{D}{(4\pi+\alpha)\ch\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}h\right)}\nonumber \\
+P(x)=\frac{D}{4\pi+\alpha}\left[1-\frac{\ch\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}x\right)}{\ch\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}h\right)}\right]\\
+E(x)=\frac{D}{4\pi+\alpha}\left[\alpha+\frac{\ch\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}x\right)}{\ch\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}h\right)}\right]
 \end{gather}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Соответствие констант
-\end_layout
-
-\begin_layout Standard
-Найдем выражение для P(x) в рамках нашей модели
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{align*}
-P(x) & =\frac{1}{4\pi}\left(D(x)-E(x)\right)=\frac{1}{4\pi}\left(\int\limits _{-h}^{h}\left[(\epsilon_{1}-1)\delta(x-x')+\frac{\beta}{2\xi}(\epsilon_{0}-\epsilon_{1})e^{-\beta\frac{|x-x'|}{\xi}}\right]E(x')dx'\right)\\
- & \text{Согласно ЛЛ считая, что}\ \epsilon_{1}\approx1\\
-P(x) & =\intop_{-h}^{h}\frac{\beta(\epsilon_{0}-\epsilon_{1})}{8\pi\xi}e^{-\beta\frac{|x-x'|}{\xi}}E(x')dx
-\end{align*}
-
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-Рассматривая G(x,x') в вышеупомянутом пределе
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{align*}
-G(x,x') & =\frac{1}{\sqrt{\delta\alpha}}e^{-\sqrt{\frac{\alpha}{\delta}}|x-x'|}\\
-\text{Таким} & \text{образом}\\
- & \begin{cases}
-\frac{1}{\sqrt{\delta\alpha}}=\frac{\beta(\epsilon_{0}-\epsilon_{1})}{8\pi\xi}\\
-\sqrt{\frac{\alpha}{\delta}}=\frac{\beta}{\xi}
-\end{cases}\\
- & \begin{cases}
-\alpha=\frac{8\pi}{\epsilon_{0}-\epsilon_{1}}\\
-\delta=\frac{8\pi\xi^{2}}{\beta^{2}(\epsilon_{0}-\epsilon_{1})}
-\end{cases}\\
-\xi^{T} & =\sqrt{\frac{\delta}{\alpha}}=\frac{\xi}{\beta}-\text{тут и далее верхним индексом T будем обозначать обозначения Таганцева}\\
-\xi_{1}^{T} & \approx\xi^{T}\sqrt{\frac{\kappa_{b}}{\kappa}}=\frac{\xi}{\beta}\sqrt{\frac{\epsilon_{1}}{\epsilon_{0}}}=\xi
-\end{align*}
 
 \end_inset
 
@@ -443,94 +417,37 @@ G(x,x') & =\frac{1}{\sqrt{\delta\alpha}}e^{-\sqrt{\frac{\alpha}{\delta}}|x-x'|}\
 \end_layout
 
 \begin_layout Standard
-Согласно формуле (13) нашей заметке 
+\begin_inset Formula 
+\begin{gather}
+W=\frac{1}{8\pi}\intop_{-h}^{h}E(x)Ddx=\frac{(4\pi\sigma)^{2}}{8\pi(4\pi+\alpha)}\left[2\alpha h+\frac{1}{\ch\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}h\right)}\intop_{-h}^{h}\ch\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}x\right)dx\right]\\
+=\frac{(4\pi\sigma)^{2}}{8\pi(4\pi+\alpha)}\left[2\alpha h+2\frac{\xi_{1}}{\sqrt{4\pi/\alpha+1}}\th\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}h\right)\right]\\
+W=\frac{4\pi\sigma^{2}}{\epsilon_{eff}}h\\
+\epsilon_{eff}=\frac{4\pi+\alpha}{\alpha+\frac{\xi_{1}}{h}\frac{1}{\sqrt{4\pi/\alpha+1}}\th\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}h\right)}\approx\frac{4\pi+\alpha}{\alpha+\frac{\sqrt{\frac{\delta}{\alpha}}}{h}\frac{1}{\sqrt{4\pi/\alpha+1}}}
+\end{gather}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Вычисленный прошлым способом 
+\begin_inset Formula $\epsilon_{eff}$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
-\begin{align*}
-\epsilon_{eff} & =\frac{h}{h+\xi\gamma\ \sh\frac{h}{\xi}}\epsilon_{0}\\
-\gamma & =\frac{\epsilon_{0}-\epsilon_{1}}{\sqrt{\epsilon_{0}\epsilon_{1}}\left[\beta\ \ch\left(\frac{h}{\xi}\right)+\sh\left(\frac{h}{\xi}\right)\right]}\\
- & \text{Рассмотрим предел}\frac{h}{\xi}\gg1\text{и \ensuremath{\beta=\sqrt{\frac{\epsilon_{1}}{\epsilon_{0}}}\ll1}}\\
-\epsilon_{eff} & =\frac{h}{h+\xi\frac{\epsilon_{0}-\epsilon_{1}}{\sqrt{\epsilon_{0}\epsilon_{1}}\left[\beta\ c\th\left(\frac{h}{\xi}\right)+1\right]}}\epsilon_{0}=\frac{h}{h+\xi\frac{\epsilon_{0}}{\sqrt{\epsilon_{0}\epsilon_{1}}}}\epsilon_{0}=\frac{\epsilon_{0}}{1+\frac{\xi}{\beta h}}\\
-\epsilon_{eff} & =\epsilon_{0}\left(1-\frac{\xi}{\beta h}\right)
-\end{align*}
+\begin{gather}
+\epsilon_{eff}=\frac{\epsilon_{0}}{1+\frac{\xi}{h}\frac{\epsilon_{0}-\epsilon_{1}}{\sqrt{\epsilon_{0}\epsilon_{1}}\left[\beta\ \th^{-1}\left(\frac{h}{\xi}\right)+1\right]}}\approx\frac{\epsilon_{0}}{1+\frac{\xi}{h}\frac{\epsilon_{0}-\epsilon_{1}}{\epsilon_{1}}}\\
+\beta=\sqrt{\frac{\epsilon_{1}}{\epsilon_{0}}}
+\end{gather}
 
 \end_inset
 
 
-\begin_inset Newline newline
-\end_inset
-
-Если я правильно понял, то Таганцев находит среднее значение поляризации,
- 
-\begin_inset Newline newline
-\end_inset
-
-а потом говорит, что эффективная диэлектрическая проницаемость должна вести
- себя так же(см.
- переход от (2.23) к (2.24) например).
- Таким образом
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{align*}
-\bar{P}\sim\kappa_{eff} & =\kappa\left(1-2\frac{\xi_{1}^{T}}{h^{T}}\th\left(\frac{h^{T}}{2\xi_{1}^{T}}\right)\right)\\
-\kappa_{eff} & =\kappa\left(1-2\frac{\xi_{1}^{T}}{h^{T}}\right)\text{или в наших обозначениях}\\
-\epsilon_{eff} & =\epsilon_{0}\left(1-\frac{\xi}{h}\right)
-\end{align*}
-
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-Таким образом ответ в пределе различается и в наших обозначениях выглядит
- так
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{align*}
-\epsilon_{eff} & =\epsilon_{0}\left(1-\frac{\xi}{\beta h}\right)\\
-\epsilon_{eff} & =\epsilon_{0}\left(1-\frac{\xi}{h}\right)
-\end{align*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Однако мне представляется весьма странным то что при нахождении ядра для
- поляризации пришлось считать, что 
-\begin_inset Formula $\epsilon_{1}=1.$
-\end_inset
-
- Если это действительно так, а 
-\begin_inset Formula $\kappa$
-\end_inset
-
- очевидно тоже самое что 
-\begin_inset Formula $\epsilon_{0}$
-\end_inset
-
-(Таганцев явно пишет что это 
-\begin_inset Quotes eld
-\end_inset
-
-dielectic permittivity
-\begin_inset Quotes erd
-\end_inset
-
- после формулы (2.15) к примеру) то тогда и 
-\begin_inset Formula $\kappa_{b}$
-\end_inset
-
- должна быть единицей в силу нашего предположения.
- 
 \end_layout
 
 \end_body

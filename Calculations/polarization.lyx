@@ -1,0 +1,250 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\begin_modules
+eqs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1cm
+\topmargin 2cm
+\rightmargin 1cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\sign}{\operatorname{sgn}}
+{\mathrm{sign}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\ch}{\operatorname{ch}}
+{\mathrm{ch}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\sh}{\operatorname{sh}}
+{\mathrm{sh}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\th}{\operatorname{th}}
+{\mathrm{th}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+P(x)
+\end_layout
+
+\begin_layout Standard
+Будем решать систему записанную в (1).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{gather}
+\begin{cases}
+\frac{d(E+4\pi P)}{dx}=0\\
+\frac{1}{\alpha}E=P-\xi_{1}^{2}\frac{\partial^{2}P}{\partial x^{2}} & \text{где }\xi_{1}=\xi\beta,\alpha=\frac{1}{\epsilon_{0}}\\
+D=4\pi\sigma\\
+P(-h)=P(h)=0
+\end{cases}\\
+E=D-4\pi P\\
+\frac{\partial^{2}P}{\partial x^{2}}-\frac{(4\pi/\alpha+1)}{\xi_{1}^{2}}P=-\frac{1}{\alpha\xi_{1}^{2}}D\\
+P(x)=A_{1}e^{\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}x}+A_{2}e^{-\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}x}+\frac{1}{4\pi+\alpha}D\\
+\begin{cases}
+P(-h)=0=A_{1}e^{-\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}h}+A_{2}e^{\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}h}+\frac{1}{4\pi+\alpha}D\\
+P(h)=0=A_{1}e^{\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}h}+A_{2}e^{-\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}h}+\frac{1}{4\pi+\alpha}D
+\end{cases}\\
+A_{1}=A_{2}=-\frac{D}{(4\pi+\alpha)\ch\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}h\right)}\nonumber \\
+P(x)=\frac{D}{4\pi+\alpha}\left[1-\frac{\ch\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}x\right)}{\ch\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}h\right)}\right]\\
+E(x)=D-4\pi P=\frac{4\pi D}{4\pi+\alpha}\left[\frac{\alpha}{4\pi}+\frac{\ch\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}x\right)}{\ch\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}h\right)}\right]
+\end{gather}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset Formula $\epsilon_{eff}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{gather}
+W=\frac{1}{8\pi}\intop_{-h}^{h}E(x)Ddx=\frac{4\pi(4\pi\sigma)^{2}}{8\pi(4\pi+\alpha)}\left[2\alpha h\frac{1}{4\pi}+\frac{1}{\ch\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}h\right)}\intop_{-h}^{h}\ch\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}x\right)dx\right]\\
+=\frac{(4\pi\sigma)^{2}}{(4\pi+\alpha)}\left[\alpha h/4\pi+\frac{\xi_{1}}{\sqrt{4\pi/\alpha+1}}\th\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}h\right)\right]\nonumber \\
+\text{С другой стороны}\\
+W=\frac{4\pi\sigma^{2}}{\epsilon_{eff}}h\\
+\epsilon_{eff}=\frac{1+\frac{\alpha}{4\pi}}{\alpha/4\pi+\frac{\xi_{1}}{h}\frac{4\pi}{\sqrt{4\pi/\alpha+1}}\th\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}h\right)}\approx\frac{1+\frac{\alpha}{4\pi}}{\frac{\alpha}{4\pi}+\frac{\xi_{1}}{h}\frac{4\pi}{\sqrt{4\pi/\alpha+1}}}=\frac{1+\frac{1}{4\pi\epsilon_{0}}}{\frac{1}{4\pi\epsilon_{0}}+\frac{\xi_{1}}{h}\frac{4\pi}{\sqrt{4\pi\epsilon_{0}+1}}}\approx\frac{\epsilon_{0}}{\frac{1}{4\pi}+\frac{\xi_{1}}{h}\sqrt{\frac{\epsilon_{0}}{4\pi}}}
+\end{gather}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Вычисленный прошлым способом 
+\begin_inset Formula $\epsilon_{eff}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{gather}
+\epsilon_{eff}=\frac{\epsilon_{0}}{1+\frac{\xi}{h}\frac{\epsilon_{0}-\epsilon_{1}}{\sqrt{\epsilon_{0}\epsilon_{1}}\left[\beta\ \th^{-1}\left(\frac{h}{\xi}\right)+1\right]}}\approx\frac{\epsilon_{0}}{1+\frac{\xi}{h}\sqrt{\frac{\epsilon_{0}}{\epsilon_{1}}}}\\
+\beta=\sqrt{\frac{\epsilon_{1}}{\epsilon_{0}}}
+\end{gather}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Видимо, лишнее 
+\begin_inset Formula $4\pi$
+\end_inset
+
+ получились из перехода из одной системы в другую, и то что у Таганцева
+ записано в СИ как 
+\begin_inset Formula $\kappa=(\alpha\epsilon_{0})^{-1}$
+\end_inset
+
+ в СГС выглядит как 
+\begin_inset Formula $\kappa=4\pi/\alpha.$
+\end_inset
+
+ Тогда все хорошо и имеем две схожие формулы в пределе 
+\begin_inset Formula $\frac{h}{\xi},\beta\gg1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{gather}
+\epsilon_{eff}\approx\frac{\epsilon_{0}}{1+\frac{\xi_{1}}{h}4\pi\sqrt{\epsilon_{0}}}\\
+\epsilon_{eff}\approx\frac{\epsilon_{0}}{1+\frac{\xi}{h}\sqrt{\frac{\epsilon_{0}}{\epsilon_{1}}}}\\
+\text{откуда }\xi_{1}=\frac{\xi}{4\pi\sqrt{\epsilon_{1}}}\nonumber 
+\end{gather}
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Точные формулы
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{gather}
+\epsilon_{eff}=\frac{1+\frac{1}{\epsilon_{0}}}{\frac{1}{\epsilon_{0}}+\frac{\xi}{h}\frac{1}{\sqrt{\epsilon_{1}\epsilon_{0}+\epsilon_{1}}}\th\left(4\pi\frac{\sqrt{\epsilon_{1}\epsilon_{0}+\epsilon_{1}}}{\xi}h\right)}\\
+\epsilon_{eff}=\frac{\epsilon_{0}}{1+\frac{\xi}{h}\frac{\epsilon_{0}-\epsilon_{1}}{\sqrt{\epsilon_{0}\epsilon_{1}}\left[\beta\ \th^{-1}\left(\frac{h}{\xi}\right)+1\right]}}
+\end{gather}
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

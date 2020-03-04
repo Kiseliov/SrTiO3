@@ -1,0 +1,313 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     11291,        305]
+NotebookOptionsPosition[     10836,        288]
+NotebookOutlinePosition[     11207,        304]
+CellTagsIndexPosition[     11164,        301]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Epsilon]0", " ", "=", "80"}], ";"}], 
+  " "}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Epsilon]1", "=", "5"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Epsilon]2", "=", "1.8"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Xi]", " ", "=", " ", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Beta]", " ", "=", " ", 
+   RowBox[{"Sqrt", "[", 
+    FractionBox["\[Epsilon]1", "\[Epsilon]0"], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Gamma]", "[", 
+    RowBox[{"h_", ",", "l_"}], "]"}], ":=", " ", 
+   FractionBox[
+    RowBox[{"\[Epsilon]0", "-", "\[Epsilon]1"}], 
+    RowBox[{
+     RowBox[{"Sqrt", "[", 
+      RowBox[{"\[Epsilon]0", "*", "\[Epsilon]1"}], "]"}], 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[Beta]", " ", 
+        RowBox[{"Cosh", "[", 
+         FractionBox[
+          RowBox[{
+           FractionBox["h", "2"], "-", "l"}], "\[Xi]"], "]"}]}], "+", 
+       RowBox[{"Sinh", "[", 
+        FractionBox[
+         RowBox[{
+          FractionBox["h", "2"], "-", "l"}], "\[Xi]"], "]"}]}], ")"}]}]]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Epsilon]func1", "[", 
+    RowBox[{"h_", ",", "l_"}], "]"}], ":=", 
+   FractionBox["h", 
+    RowBox[{
+     RowBox[{
+      FractionBox["1", "\[Epsilon]0"], 
+      RowBox[{"(", 
+       RowBox[{"h", "-", 
+        RowBox[{"2", "l"}], "+", 
+        RowBox[{"2", "\[Xi]", " ", 
+         RowBox[{"\[Gamma]", "[", 
+          RowBox[{"h", ",", "l"}], "]"}], " ", 
+         RowBox[{"Sinh", "[", 
+          FractionBox[
+           RowBox[{
+            FractionBox["h", "2"], "-", "l"}], "\[Xi]"], "]"}], 
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"-", 
+           FractionBox["h", "\[Xi]"]}]]}]}], ")"}]}], "+", 
+     RowBox[{
+      FractionBox["1", "\[Epsilon]2"], "2", "l"}]}]]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Show", "[", 
+    RowBox[{
+     RowBox[{"LogLogPlot", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"\[Epsilon]func1", "[", 
+          RowBox[{"h", ",", "0.45"}], "]"}], ",", 
+         RowBox[{"\[Epsilon]func1", "[", 
+          RowBox[{"h", ",", "0.5"}], "]"}], ",", 
+         RowBox[{"\[Epsilon]func1", "[", 
+          RowBox[{"h", ",", "0.7"}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"h", ",", "1.4", ",", "600"}], "}"}], ",", 
+       RowBox[{"PlotRange", "\[Rule]", " ", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0", ",", "600"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "100"}], "}"}]}], "}"}]}], ",", 
+       RowBox[{"AxesOrigin", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"0.3", ",", "1"}], "}"}]}], ",", 
+       RowBox[{"GridLines", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", "\[Eta]", "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"\[Epsilon]", ",", "2", ",", "80"}], "}"}]}], "}"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"PlotStyle", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Thickness", "\[Rule]", "0.003"}], ",", "Dashed", ",", 
+             "Blue"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"Thickness", "\[Rule]", "0.003"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Thickness", "\[Rule]", "0.003"}], ",", "Dashed", ",", 
+             "Green"}], "}"}]}], "}"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"PlotLegends", "\[Rule]", 
+         RowBox[{"Placed", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+            "\"\<4.5A\>\"", ",", " ", "\"\<5A\>\"", ",", " ", 
+             "\"\<5.5A\>\""}], "}"}], ",", "Below"}], "]"}]}], "}"}]}], "]"}],
+      ",", "\[IndentingNewLine]", 
+     RowBox[{"Graphics", "[", 
+      RowBox[{"{", 
+       RowBox[{"Red", ",", 
+        RowBox[{"Point", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Log", "[", "1.9", "]"}], ",", 
+             RowBox[{"Log", "[", "3", "]"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Log", "[", "2.1", "]"}], ",", 
+             RowBox[{"Log", "[", "2.6", "]"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Log", "[", "2.2", "]"}], ",", 
+             RowBox[{"Log", "[", "3.5", "]"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Log", "[", "2.6", "]"}], ",", 
+             RowBox[{"Log", "[", "3.1", "]"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Log", "[", "2.8", "]"}], ",", 
+             RowBox[{"Log", "[", "3.4", "]"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Log", "[", "3.6", "]"}], ",", 
+             RowBox[{"Log", "[", "4.4", "]"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Log", "[", "4.3", "]"}], ",", 
+             RowBox[{"Log", "[", "4.9", "]"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Log", "[", "4.7", "]"}], ",", 
+             RowBox[{"Log", "[", "6.2", "]"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Log", "[", "6", "]"}], ",", 
+             RowBox[{"Log", "[", "7.6", "]"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Log", "[", "9.5", "]"}], ",", 
+             RowBox[{"Log", "[", "12", "]"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Log", "[", "9.6", "]"}], ",", 
+             RowBox[{"Log", "[", "16", "]"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Log", "[", "23", "]"}], ",", 
+             RowBox[{"Log", "[", "29", "]"}]}], "}"}]}], "}"}], "]"}]}], 
+       "}"}], "]"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"l", ",", "0.4", ",", "0.7", ",", "0.00001"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Eta]", ",", "0.3", ",", "500", ",", "0.00001"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Epsilon]", ",", "0", ",", "80", ",", "0.00001"}], "}"}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.792175449072578*^9, 3.7921754672849765`*^9}, {
+  3.7921755469355803`*^9, 3.79217554833028*^9}, {3.7921755963204136`*^9, 
+  3.7921756269102907`*^9}, {3.7921756968142967`*^9, 3.792175703469425*^9}},
+ CellLabel->"In[65]:=",ExpressionUUID->"98d32621-93b6-41c6-8cc8-9fb132afe2db"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`l$$ = 0.4, $CellContext`\[Epsilon]$$ = 
+    0, $CellContext`\[Eta]$$ = 0.3, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`l$$], 0.4, 0.7, 0.00001}, {
+      Hold[$CellContext`\[Eta]$$], 0.3, 500, 0.00001}, {
+      Hold[$CellContext`\[Epsilon]$$], 0, 80, 0.00001}}, Typeset`size$$ = {
+    540., {211., 172.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`l$19831$$ = 
+    0, $CellContext`\[Eta]$19832$$ = 0, $CellContext`\[Epsilon]$19833$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`l$$ = 0.4, $CellContext`\[Epsilon]$$ = 
+        0, $CellContext`\[Eta]$$ = 0.3}, "ControllerVariables" :> {
+        Hold[$CellContext`l$$, $CellContext`l$19831$$, 0], 
+        Hold[$CellContext`\[Eta]$$, $CellContext`\[Eta]$19832$$, 0], 
+        Hold[$CellContext`\[Epsilon]$$, $CellContext`\[Epsilon]$19833$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        LogLogPlot[{
+          $CellContext`\[Epsilon]func1[$CellContext`h, 0.45], 
+          $CellContext`\[Epsilon]func1[$CellContext`h, 0.5], 
+          $CellContext`\[Epsilon]func1[$CellContext`h, 0.7]}, {$CellContext`h,
+           1.4, 600}, PlotRange -> {{0, 600}, {0, 100}}, 
+         AxesOrigin -> {0.3, 1}, 
+         GridLines -> {{$CellContext`\[Eta]$$}, {$CellContext`\[Epsilon]$$, 2,
+             80}}, {PlotStyle -> {{Thickness -> 0.003, Dashed, Blue}, {
+            Thickness -> 0.003}, {Thickness -> 0.003, Dashed, Green}}}, {
+         PlotLegends -> Placed[{"4.5A", "5A", "5.5A"}, Below]}], 
+        Graphics[{Red, 
+          Point[{{
+             Log[1.9], 
+             Log[3]}, {
+             Log[2.1], 
+             Log[2.6]}, {
+             Log[2.2], 
+             Log[3.5]}, {
+             Log[2.6], 
+             Log[3.1]}, {
+             Log[2.8], 
+             Log[3.4]}, {
+             Log[3.6], 
+             Log[4.4]}, {
+             Log[4.3], 
+             Log[4.9]}, {
+             Log[4.7], 
+             Log[6.2]}, {
+             Log[6], 
+             Log[7.6]}, {
+             Log[9.5], 
+             Log[12]}, {
+             Log[9.6], 
+             Log[16]}, {
+             Log[23], 
+             Log[29]}}]}]], 
+      "Specifications" :> {{$CellContext`l$$, 0.4, 0.7, 
+         0.00001}, {$CellContext`\[Eta]$$, 0.3, 500, 
+         0.00001}, {$CellContext`\[Epsilon]$$, 0, 80, 0.00001}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{612., {284., 293.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.792175471642593*^9, 3.792175549827208*^9, {3.7921755983137546`*^9, 
+   3.792175627289447*^9}, {3.7921756984026985`*^9, 3.792175703778879*^9}},
+ CellLabel->"Out[72]=",ExpressionUUID->"889c819f-1b5a-4a52-81bc-fe9e4425354e"]
+}, Open  ]]
+},
+WindowSize->{1520, 781},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 6645, 181, 703, "Input",ExpressionUUID->"98d32621-93b6-41c6-8cc8-9fb132afe2db"],
+Cell[7228, 205, 3592, 80, 638, "Output",ExpressionUUID->"889c819f-1b5a-4a52-81bc-fe9e4425354e"]
+}, Open  ]]
+}
+]
+*)
+
