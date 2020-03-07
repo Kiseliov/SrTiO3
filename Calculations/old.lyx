@@ -302,7 +302,7 @@ D(x) & =D_{1}(x)+D_{2}(x)+D_{3}(x)=\\
 \begin{align}
 W & =\frac{(4\pi\sigma)^{2}}{8\pi\epsilon_{0}}\intop_{-h}^{h}\left(1+\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\epsilon_{1}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\ch(\frac{x}{\xi})\right)dx=\frac{(4\pi\sigma)^{2}}{\epsilon_{0}}\left(2h+2\xi\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\epsilon_{1}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\sh(\frac{h}{\xi})\right)dx\\
 W & =\frac{4\pi\sigma^{2}}{\epsilon_{eff}}h\\
-\epsilon_{eff} & =\frac{\epsilon_{0}}{1+\frac{\xi}{h}\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\epsilon_{1}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\sh(\frac{h}{\xi})}\approx\frac{\epsilon_{0}}{1+\frac{\xi}{h}\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\epsilon_{1}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\sh(\frac{h}{\xi})}\approx\frac{\epsilon_{0}}{1+\frac{\xi}{h}\sqrt{\frac{\epsilon_{0}}{\epsilon_{1}}}e^{-\frac{h}{\xi}}}
+\epsilon_{eff} & =\frac{\epsilon_{0}}{1+\frac{\xi}{h}\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\epsilon_{1}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\sh(\frac{h}{\xi})}\approx\frac{\epsilon_{0}}{1+\frac{\xi}{h}\frac{(\epsilon_{0}-\epsilon_{1})\beta}{\epsilon_{1}\left(\sh(\frac{h}{\xi})+\beta\ch(\frac{h}{\xi})\right)}e^{-\frac{h}{\xi}}\sh(\frac{h}{\xi})}\approx\frac{\epsilon_{0}}{1+\sqrt{\frac{\epsilon_{0}}{\epsilon_{1}}}\frac{\xi}{h}e^{-\frac{h}{\xi}}}
 \end{align}
 
 \end_inset

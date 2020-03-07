@@ -131,22 +131,25 @@ P(x)
 \begin_layout Standard
 \begin_inset Formula 
 \begin{gather}
+D=E+4\pi P=\epsilon_{0}E,\ \epsilon_{0}\gg1,\Rightarrow E\approx\frac{4\pi}{\epsilon_{0}}P\Rightarrow\alpha=\frac{4\pi}{\epsilon_{0}}\\
 \begin{cases}
 \frac{d(E+4\pi P)}{dx}=0\\
-\frac{1}{\alpha}E=P-\xi_{1}^{2}\frac{\partial^{2}P}{\partial x^{2}} & \text{где }\xi_{1}=\sqrt{\frac{\delta}{\alpha}},\alpha=\frac{1}{\epsilon_{0}}\\
+\frac{1}{\alpha}E=P-\xi_{T}^{2}\frac{\partial^{2}P}{\partial x^{2}} & \text{где }\xi_{T}=\xi_{T}^{1}\frac{1}{\beta}=\xi\sqrt{\frac{\epsilon_{0}}{\epsilon_{1}}}\\
 D=4\pi\sigma\\
 P(-h)=P(h)=0
 \end{cases}\\
 E=D-4\pi P\\
-\frac{\partial^{2}P}{\partial x^{2}}-\frac{(4\pi/\alpha+1)}{\xi_{1}^{2}}P=-\frac{1}{\alpha\xi_{1}^{2}}D\\
-P(x)=A_{1}e^{\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}x}+A_{2}e^{-\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}x}+\frac{1}{4\pi+\alpha}D\\
+\frac{\partial^{2}P}{\partial x^{2}}-\frac{(4\pi/\alpha+1)}{\xi_{T}}P=-\frac{1}{\alpha\xi_{T}}D\\
+P(x)=A_{1}e^{\frac{\sqrt{4\pi/\alpha+1}}{\xi_{T}}x}+A_{2}e^{-\frac{\sqrt{4\pi/\alpha+1}}{\xi_{T}}x}+\frac{1}{4\pi+\alpha}D\\
 \begin{cases}
-P(-h)=0=A_{1}e^{-\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}h}+A_{2}e^{\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}h}+\frac{1}{4\pi+\alpha}D\\
-P(h)=0=A_{1}e^{\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}h}+A_{2}e^{-\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}h}+\frac{1}{4\pi+\alpha}D
+P(-h)=0=A_{1}e^{-\frac{\sqrt{4\pi/\alpha+1}}{\xi_{T}}h}+A_{2}e^{\frac{\sqrt{4\pi/\alpha+1}}{\xi_{T}}h}+\frac{1}{4\pi+\alpha}D\\
+P(h)=0=A_{1}e^{\frac{\sqrt{4\pi/\alpha+1}}{\xi_{T}}h}+A_{2}e^{-\frac{\sqrt{4\pi/\alpha+1}}{\xi_{T}}h}+\frac{1}{4\pi+\alpha}D
 \end{cases}\\
-A_{1}=A_{2}=-\frac{D}{(4\pi+\alpha)\ch\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}h\right)}\nonumber \\
-P(x)=\frac{D}{4\pi+\alpha}\left[1-\frac{\ch\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}x\right)}{\ch\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}h\right)}\right]\\
-E(x)=D-4\pi P=\frac{4\pi D}{4\pi+\alpha}\left[\frac{\alpha}{4\pi}+\frac{\ch\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}x\right)}{\ch\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}h\right)}\right]
+A_{1}=A_{2}=-\frac{D}{(4\pi+\alpha)\ch\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{T}}h\right)}\nonumber \\
+P(x)=\frac{D}{4\pi+\alpha}\left[1-\frac{\ch\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{T}}x\right)}{\ch\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{T}}h\right)}\right]\\
+P(x)=\frac{D}{4\pi}\left[1-\frac{\ch\left(\frac{\sqrt{\epsilon_{1}}}{\xi}x\right)}{\ch\left(\frac{\sqrt{\epsilon_{1}}}{\xi}h\right)}\right]\\
+<P>=\frac{1}{2h}\intop_{-h}^{h}\frac{D}{4\pi}\left[1-\frac{\ch\left(\frac{\sqrt{\epsilon_{1}}}{\xi}x\right)}{\ch\left(\frac{\sqrt{\epsilon_{1}}}{\xi}h\right)}\right]dx\approx\sigma\left[1-\frac{\xi}{\sqrt{\epsilon_{1}}h}\right]\\
+E(x)=D-4\pi P=\frac{4\pi D}{4\pi+\alpha}\left[\frac{\alpha}{4\pi}+\frac{\ch\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{T}}x\right)}{\ch\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{T}}h\right)}\right]
 \end{gather}
 
 \end_inset
@@ -164,12 +167,98 @@ E(x)=D-4\pi P=\frac{4\pi D}{4\pi+\alpha}\left[\frac{\alpha}{4\pi}+\frac{\ch\left
 \begin_layout Standard
 \begin_inset Formula 
 \begin{gather}
-W=\frac{1}{8\pi}\intop_{-h}^{h}E(x)Ddx=\frac{4\pi(4\pi\sigma)^{2}}{8\pi(4\pi+\alpha)}\left[2\alpha h\frac{1}{4\pi}+\frac{1}{\ch\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}h\right)}\intop_{-h}^{h}\ch\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}x\right)dx\right]\\
-=\frac{(4\pi\sigma)^{2}}{(4\pi+\alpha)}\left[\alpha h/4\pi+\frac{\xi_{1}}{\sqrt{4\pi/\alpha+1}}\th\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}h\right)\right]\nonumber \\
+W=\frac{1}{8\pi}\intop_{-h}^{h}E(x)Ddx=\frac{4\pi(4\pi\sigma)^{2}}{8\pi(4\pi+\alpha)}\left[2\alpha h\frac{1}{4\pi}+\frac{1}{\ch\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{T}}h\right)}\intop_{-h}^{h}\ch\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{T}}x\right)dx\right]\\
+=\frac{(4\pi\sigma)^{2}}{(4\pi+\alpha)}\left[\alpha h/4\pi+\frac{\xi_{T}}{\sqrt{4\pi/\alpha+1}}\th\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{T}}h\right)\right]\nonumber \\
 \text{С другой стороны}\\
 W=\frac{4\pi\sigma^{2}}{\epsilon_{eff}}h\\
-\epsilon_{eff}=\frac{1+\frac{\alpha}{4\pi}}{\alpha/4\pi+\frac{\xi_{1}}{h}\frac{4\pi}{\sqrt{4\pi/\alpha+1}}\th\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{1}}h\right)}\approx\frac{1+\frac{\alpha}{4\pi}}{\frac{\alpha}{4\pi}+\frac{\xi_{1}}{h}\frac{4\pi}{\sqrt{4\pi/\alpha+1}}}=\frac{1+\frac{1}{4\pi\epsilon_{0}}}{\frac{1}{4\pi\epsilon_{0}}+\frac{\xi_{1}}{h}\frac{4\pi}{\sqrt{4\pi\epsilon_{0}+1}}}\approx\frac{\epsilon_{0}}{\frac{1}{4\pi}+\frac{\xi_{1}}{h}\sqrt{\frac{\epsilon_{0}}{4\pi}}}
+\epsilon_{eff}=\frac{1+\frac{\alpha}{4\pi}}{\alpha/4\pi+\frac{\xi_{T}}{h}\frac{4\pi}{\sqrt{4\pi/\alpha+1}}\th\left(\frac{\sqrt{4\pi/\alpha+1}}{\xi_{T}}h\right)}\approx\frac{\epsilon_{0}}{1+\epsilon_{0}\frac{\xi_{T}}{h}\frac{4\pi}{\sqrt{\epsilon_{0}}}\th\left(\frac{\sqrt{\epsilon_{0}}}{\xi_{T}}h\right)}\approx\frac{\epsilon_{0}}{1+\epsilon_{0}\frac{\xi}{h}\frac{4\pi}{\sqrt{\epsilon_{1}}}\th\left(\frac{\sqrt{\epsilon_{1}}}{\xi}h\right)}\\
+\epsilon_{eff}\approx\frac{\epsilon_{0}}{1+\frac{\xi}{h}\frac{4\pi\epsilon_{0}}{\sqrt{\epsilon_{1}}}}
 \end{gather}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Green function with zero border conditions
+\end_layout
+
+\begin_layout Standard
+Найдем функцию Грина уравнения (2.19)
+\begin_inset Formula 
+\begin{align*}
+\delta(x-x') & =\alpha G(x')-\delta G^{''}(x')\\
+G(x,x') & =\begin{cases}
+C_{1}e^{-\sqrt{\frac{\alpha}{\delta}}(x-x')}+C_{2}e^{\sqrt{\frac{\alpha}{\delta}}(x-x')}, & x'<x\\
+C_{3}e^{-\sqrt{\frac{\alpha}{\delta}}(x-x')}+C_{4}e^{\sqrt{\frac{\alpha}{\delta}}(x-x')}, & x'>x
+\end{cases}\\
+\text{Из} & \text{непрерывности и скачка производной }\\
+ & \begin{cases}
+G(x,x+0)=G(x,x-0)\\
+-\delta\left[G^{'}(x,x+0)-G^{'}(x,x-0)\right]=1
+\end{cases}\\
+ & \begin{cases}
+C_{1}+C_{2}=C_{3}+C_{4}\\
+-C_{1}+C_{2}+C_{3}-C_{4}=-\frac{1}{\sqrt{\delta\alpha}}
+\end{cases}\\
+ & \begin{cases}
+C_{1}-C_{3}=\frac{1}{2\sqrt{\delta\alpha}}\\
+C_{2}-C_{4}=-\frac{1}{2\sqrt{\delta\alpha}}
+\end{cases}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+У Таганцева гран условия 
+\begin_inset Formula $G(x,-h)=G(x,h)=0$
+\end_inset
+
+.
+ В терминах 
+\begin_inset Formula $C_{1},C_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+ & \begin{cases}
+C_{1}e^{-\sqrt{\frac{\alpha}{\delta}}(x+h)}+C_{2}e^{\sqrt{\frac{\alpha}{\delta}}(x+h)}=0\\
+C_{3}e^{-\sqrt{\frac{\alpha}{\delta}}(x-h)}+C_{4}e^{\sqrt{\frac{\alpha}{\delta}}(x-h)}=0
+\end{cases}\\
+ & \text{Итого имеем систему на коэфициенты}\\
+ & \begin{cases}
+C_{1}=-C_{2}e^{2\sqrt{\frac{\alpha}{\delta}}(x+h)}\\
+C_{3}=-C_{4}e^{2\sqrt{\frac{\alpha}{\delta}}(x-h)}\\
+C_{1}-C_{3}=\frac{1}{2\sqrt{\delta\alpha}}\\
+C_{2}-C_{4}=-\frac{1}{2\sqrt{\delta\alpha}}
+\end{cases}\\
+ & \begin{cases}
+-C_{2}e^{2\sqrt{\frac{\alpha}{\delta}}(x+h)}+C_{4}e^{2\sqrt{\frac{\alpha}{\delta}}(x-h)}=\frac{1}{2\sqrt{\delta\alpha}}\\
+C_{2}-C_{4}=-\frac{1}{2\sqrt{\delta\alpha}}
+\end{cases}\\
+ & -C_{4}e^{2\sqrt{\frac{\alpha}{\delta}}(x+h)}+\frac{1}{2\sqrt{\delta\alpha}}e^{2\sqrt{\frac{\alpha}{\delta}}(x+h)}+C_{4}e^{2\sqrt{\frac{\alpha}{\delta}}(x-h)}=\frac{1}{2\sqrt{\delta\alpha}}\\
+ & -2C_{4}e^{2\sqrt{\frac{\alpha}{\delta}}x}\sh\left(2\sqrt{\frac{\alpha}{\delta}}h\right)=\frac{1}{2\sqrt{\delta\alpha}}\left(1-e^{2\sqrt{\frac{\alpha}{\delta}}(x+h)}\right)\\
+ & C_{4}=-\frac{e^{-2\sqrt{\frac{\alpha}{\delta}}x}-e^{2\sqrt{\frac{\alpha}{\delta}}h}}{4\sqrt{\delta\alpha}\ \sh\left(2\sqrt{\frac{\alpha}{\delta}}h\right)}\\
+ & C_{2}=\frac{\left(-e^{-2\sqrt{\frac{\alpha}{\delta}}x}+e^{2\sqrt{\frac{\alpha}{\delta}}h}-2\sh\left(2\sqrt{\frac{\alpha}{\delta}}h\right)\right)}{4\sqrt{\delta\alpha}\ \sh\left(2\sqrt{\frac{\alpha}{\delta}}h\right)}=\frac{-e^{-2\sqrt{\frac{\alpha}{\delta}}x}+e^{-2\sqrt{\frac{\alpha}{\delta}}h}}{4\sqrt{\delta\alpha}\ \sh\left(2\sqrt{\frac{\alpha}{\delta}}h\right)}\\
+ & C_{3}=\frac{e^{-2\sqrt{\frac{\alpha}{\delta}}h}-e^{2\sqrt{\frac{\alpha}{\delta}}x}}{4\sqrt{\delta\alpha}\ \sh\left(2\sqrt{\frac{\alpha}{\delta}}h\right)}\\
+ & C_{1}=\frac{e^{2\sqrt{\frac{\alpha}{\delta}}h}-e^{2\sqrt{\frac{\alpha}{\delta}}x}}{4\sqrt{\delta\alpha}\ \sh\left(2\sqrt{\frac{\alpha}{\delta}}h\right)}\\
+G(x,x') & =\begin{cases}
+\frac{1}{2\sqrt{\delta\alpha}\ \sh\left(2\sqrt{\frac{\alpha}{\delta}}h\right)}\left[\ch\left(\sqrt{\frac{\alpha}{\delta}}\left\{ x-x'-2h\right\} \right)-\ch\left[\sqrt{\frac{\alpha}{\delta}}(x+x')\right]\right] & x'<x\\
+\frac{1}{2\sqrt{\delta\alpha}\ \sh\left(2\sqrt{\frac{\alpha}{\delta}}h\right)}\left[\ch\left(\sqrt{\frac{\alpha}{\delta}}\left\{ x-x'+2h\right\} \right)-\ch\left[\sqrt{\frac{\alpha}{\delta}}(x+x')\right]\right] & x'>x
+\end{cases}\\
+G(x,x') & =\begin{cases}
+\frac{1}{\sqrt{\delta\alpha}\ \sh\left(2\sqrt{\frac{\alpha}{\delta}}h\right)}\sh\left[\sqrt{\frac{\alpha}{\delta}}\left(h+x'\right)\right]\sh\left[\sqrt{\frac{\alpha}{\delta}}\left(h-x\right)\right] & x'<x\\
+\frac{1}{\sqrt{\delta\alpha}\ \sh\left(2\sqrt{\frac{\alpha}{\delta}}h\right)}\sh\left[\sqrt{\frac{\alpha}{\delta}}\left(h-x'\right)\right]\sh\left[\sqrt{\frac{\alpha}{\delta}}\left(h+x\right)\right] & x'>x
+\end{cases}
+\end{align*}
 
 \end_inset
 
@@ -187,58 +276,8 @@ W=\frac{4\pi\sigma^{2}}{\epsilon_{eff}}h\\
 \begin_layout Standard
 \begin_inset Formula 
 \begin{gather}
-\epsilon_{eff}=\frac{\epsilon_{0}}{1+\frac{\xi}{h}\frac{\epsilon_{0}-\epsilon_{1}}{\sqrt{\epsilon_{0}\epsilon_{1}}\left[\beta\ \th^{-1}\left(\frac{h}{\xi}\right)+1\right]}}\approx\frac{\epsilon_{0}}{1+\frac{\xi}{h}\sqrt{\frac{\epsilon_{0}}{\epsilon_{1}}}}\\
+\epsilon_{eff}=\frac{\epsilon_{0}}{1+\frac{\xi}{h}\frac{\epsilon_{0}-\epsilon_{1}}{\sqrt{\epsilon_{0}\epsilon_{1}}\left[\beta\ \th^{-1}\left(\frac{h}{\xi}\right)+1\right]}}\approx\frac{\epsilon_{0}}{1+\frac{\xi}{h}\frac{\epsilon_{0}-\epsilon_{1}}{\epsilon_{1}}}\\
 \beta=\sqrt{\frac{\epsilon_{1}}{\epsilon_{0}}}
-\end{gather}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Видимо, лишнее 
-\begin_inset Formula $4\pi$
-\end_inset
-
- получились из перехода из одной системы в другую, и то что у Таганцева
- записано в СИ как 
-\begin_inset Formula $\kappa=(\alpha\epsilon_{0})^{-1}$
-\end_inset
-
- в СГС выглядит как 
-\begin_inset Formula $\kappa=4\pi/\alpha.$
-\end_inset
-
- Тогда все хорошо и имеем две схожие формулы в пределе 
-\begin_inset Formula $\frac{h}{\xi},\beta\gg1$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{gather}
-\epsilon_{eff}\approx\frac{\epsilon_{0}}{1+\frac{\xi_{1}}{h}4\pi\sqrt{\epsilon_{0}}}\\
-\epsilon_{eff}\approx\frac{\epsilon_{0}}{1+\frac{\xi}{h}\sqrt{\frac{\epsilon_{0}}{\epsilon_{1}}}}\\
-\text{откуда }\xi_{1}=\frac{\xi}{4\pi\sqrt{\epsilon_{1}}}\nonumber 
-\end{gather}
-
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-Точные формулы
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{gather}
-\epsilon_{eff}=\frac{1+\frac{1}{\epsilon_{0}}}{\frac{1}{\epsilon_{0}}+\frac{\xi}{h}\frac{1}{\sqrt{\epsilon_{1}\epsilon_{0}+\epsilon_{1}}}\th\left(4\pi\frac{\sqrt{\epsilon_{1}\epsilon_{0}+\epsilon_{1}}}{\xi}h\right)}\\
-\epsilon_{eff}=\frac{\epsilon_{0}}{1+\frac{\xi}{h}\frac{\epsilon_{0}-\epsilon_{1}}{\sqrt{\epsilon_{0}\epsilon_{1}}\left[\beta\ \th^{-1}\left(\frac{h}{\xi}\right)+1\right]}}
 \end{gather}
 
 \end_inset
